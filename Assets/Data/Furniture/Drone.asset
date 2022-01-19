@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
+  m_Name: Drone
+  m_EditorClassIdentifier: 
+  furnitureName: Drone
+  description: Drone
+  furnitureObject: {fileID: 657337756781032789, guid: 781cfcbbac0319841bdb65b08d9351e9, type: 3}
