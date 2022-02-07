@@ -6,7 +6,7 @@ using Vuforia;
 public class PlaneManager : MonoBehaviour
 {
     public static PlaneManager Instance { get; private set; } = null;
-
+    TouchHandler Touchhandler = null;
     private void Awake()
     {
         if (Instance)
@@ -32,6 +32,7 @@ public class PlaneManager : MonoBehaviour
 
     private void Start()
     {
+        Touchhandler = GameObject.Find("Manager").GetComponent<TouchHandler>();
         mPlaneFinder = FindObjectOfType<PlaneFinderBehaviour>();
         mContentPositioningBehaviour = mPlaneFinder.GetComponent<ContentPositioningBehaviour>();
 
@@ -50,7 +51,6 @@ public class PlaneManager : MonoBehaviour
         {
             CurrentFurniture.DetachObjectFromAnchor();
             CurrentFurniture.SetNewPosition(result.Position);
-
             string s = "";
             s += "result : " + result.Position.ToString();
             s += "\n\ntrans : " + CurrentFurniture.transform.position.ToString();
@@ -61,40 +61,43 @@ public class PlaneManager : MonoBehaviour
 
     public void HandleInteractiveHitTest(HitTestResult result)
     {
-        if (result == null)
+        if (!CurrentFurniture.IsPlaced)
         {
-            Debug.LogError("Invalid hit test result!");
-            return;
+            if (result == null)
+            {
+                Debug.LogError("Invalid hit test result!");
+                return;
+            }
+
+            if (CurrentFurniture == null) return;
+
+            if (UI_Manager.Instance.IsPointerOverUI()) return;
+
+            Debug.Log("HandleInteractiveHitTest() called.");
+
+            mContentPositioningBehaviour.DuplicateStage = false;
+
+            // With a tap a new anchor is created, so we first check that
+            // Status=TRACKED/EXTENDED_TRACKED and StatusInfo=NORMAL before proceeding.
+            //if (TrackingStatusIsTrackedAndNormal)
+            //{
+            //mContentPositioningBehaviour.AnchorStage = mPlacementAnchor;
+            mContentPositioningBehaviour.AnchorStage = CurrentFurniture.anchorBehaviour;
+            mContentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
+            //FurnitureManager.EnableRendererColliderCanvas(CurrentFurniture.gameObject, true);
+
+            // If the product has not been placed in the scene yet, we attach it to the anchor
+            // while rotating it to face the camera. Then we activate the content, also
+            // enabling rotation input detection.
+            // Otherwise, we simply attach the content to the new anchor, preserving its rotation.
+            // The placement methods will set the IsPlaced flag to true if the 
+            // transform argument is valid and to false if it is null.
+
+            //CurrentObject.SetPlaced(!CurrentObject.IsPlaced);
+            //}
+
+            CurrentFurniture.PlaceObjectAtAnchor();
         }
-
-        if (CurrentFurniture == null) return;
-
-        if (UI_Manager.Instance.IsPointerOverUI()) return;
-
-        Debug.Log("HandleInteractiveHitTest() called.");
-
-        mContentPositioningBehaviour.DuplicateStage = false;
-
-        // With a tap a new anchor is created, so we first check that
-        // Status=TRACKED/EXTENDED_TRACKED and StatusInfo=NORMAL before proceeding.
-        //if (TrackingStatusIsTrackedAndNormal)
-        //{
-        //mContentPositioningBehaviour.AnchorStage = mPlacementAnchor;
-        mContentPositioningBehaviour.AnchorStage = CurrentFurniture.anchorBehaviour;
-        mContentPositioningBehaviour.PositionContentAtPlaneAnchor(result);
-        //FurnitureManager.EnableRendererColliderCanvas(CurrentFurniture.gameObject, true);
-
-        // If the product has not been placed in the scene yet, we attach it to the anchor
-        // while rotating it to face the camera. Then we activate the content, also
-        // enabling rotation input detection.
-        // Otherwise, we simply attach the content to the new anchor, preserving its rotation.
-        // The placement methods will set the IsPlaced flag to true if the 
-        // transform argument is valid and to false if it is null.
-
-        //CurrentObject.SetPlaced(!CurrentObject.IsPlaced);
-        //}
-
-        CurrentFurniture.PlaceObjectAtAnchor();
     }
 
     //public void HandleAutomaticHitTest(HitTestResult result)

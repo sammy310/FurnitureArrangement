@@ -10,8 +10,6 @@ public class TouchHandler : MonoBehaviour
     GameObject target;
     public GameObject editEndButton;
     public GameObject editButton;
-    public GameObject ver1Button;
-    public GameObject ver2Button;
     public Slider scaleSlider;
     public Slider rotateSlider;
     bool isFirstTouch = true;
@@ -25,11 +23,11 @@ public class TouchHandler : MonoBehaviour
     float FirstScale;
     Vector3 FirstRotation;
 
-    bool verChange;
     bool UItouched;
 
-    enum Mode
+    public enum Mode
     {
+        ReadyMode,
         SelectMode,
         EditMode
     }
@@ -37,10 +35,12 @@ public class TouchHandler : MonoBehaviour
     {
         touchMode = Mode.SelectMode;
         target = null;
-        verChange = false;
         UItouched = false;
     }
-
+    public void SetTouchMode(Mode i)
+    {
+        touchMode = i;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -56,62 +56,13 @@ public class TouchHandler : MonoBehaviour
                 break;
 
             case Mode.EditMode:
-                if (!verChange)
-                {
-                    Ver1Control();
-                }
-                else
-                {
-                    Ver2Control();
-                }
+                FurnitureControl();
                 break;
         }
     }
 
-    void Ver1Control()
-    {
-        if (Input.touchCount < 2)
-        {
-            FirstScale = target.transform.localScale.x;
-            FirstRotation = target.transform.localEulerAngles;
-            isFirstTouch = true;
-        }
-        if (Input.touchCount == 1)
-        {
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
-            {
-                Ray touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(touchRay, out var cameraToPlaneHit) && cameraToPlaneHit.collider.gameObject.tag == "Floor")
-                {
-                    target.transform.position = cameraToPlaneHit.point;
-                }
-            }
-        }
-        else if (Input.touchCount == 2)
-        {
-            CurrentDistance = Vector2.Distance(Input.GetTouch(0).position, Input.GetTouch(1).position);
-            var diffY = Input.GetTouch(0).position.y - Input.GetTouch(1).position.y;
-            var diffX = Input.GetTouch(0).position.x - Input.GetTouch(1).position.x;
-            CurrentAngle = Mathf.Atan2(diffY, diffX) * Mathf.Rad2Deg;
 
-            if (isFirstTouch)
-            {
-                FirstDistance = CurrentDistance;
-                FirstAngle = CurrentAngle;
-                isFirstTouch = false;
-            }
-
-            var angleDelta = CurrentAngle - FirstAngle;
-            var scaleMultiplier = CurrentDistance / FirstDistance;
-            var scaleAmount = FirstScale * scaleMultiplier;
-            var scaleAmountClamped = Mathf.Clamp(scaleAmount, 0.1f, 2.0f);
-
-            target.transform.localEulerAngles = FirstRotation - new Vector3(0, angleDelta * 3f, 0);
-            target.transform.localScale = new Vector3(scaleAmountClamped, scaleAmountClamped, scaleAmountClamped);
-        }
-    }
-
-    void Ver2Control()
+    void FurnitureControl()
     {
         if (Input.touchCount == 1)
         {
@@ -138,15 +89,13 @@ public class TouchHandler : MonoBehaviour
         Ray touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         Physics.Raycast(touchRay, out hit);
-        if (target != null && target.tag == "Cube" && target.gameObject != hit.collider.gameObject)
+        if (target != null && target.tag == "Furniture" && target.gameObject != hit.collider.gameObject)
         {
-            target.GetComponent<Renderer>().material.SetVector("_OutlineColor", new Vector4(255f, 255f, 255f, 0f));
             target = null;
         }
-        if (hit.collider.tag == "Cube")
+        if (hit.collider.tag == "Furniture")
         {
             target = hit.collider.gameObject;
-            target.GetComponent<Renderer>().material.SetVector("_OutlineColor", new Vector4(255f, 255f, 255f, 255f));
             FirstScale = hit.collider.gameObject.transform.localScale.x;
             FirstRotation = hit.collider.gameObject.transform.localEulerAngles;
             editButton.SetActive(true);
@@ -156,20 +105,6 @@ public class TouchHandler : MonoBehaviour
             editButton.SetActive(false);
             target = null;
         }
-    }
-
-    public void ButtonVer1()
-    {
-        verChange = false;
-        scaleSlider.gameObject.SetActive(false);
-        rotateSlider.gameObject.SetActive(false);
-    }
-
-    public void ButtonVer2()
-    {
-        verChange = true;
-        scaleSlider.gameObject.SetActive(true);
-        rotateSlider.gameObject.SetActive(true);
     }
 
     public void ScaleScroll()
@@ -188,23 +123,17 @@ public class TouchHandler : MonoBehaviour
     {
         touchMode = Mode.EditMode;
         editButton.SetActive(false);
-        ver1Button.SetActive(true);
-        ver2Button.SetActive(true);
         editEndButton.SetActive(true);
-        target.GetComponent<BoxCollider>().enabled = false;
+        rotateSlider.gameObject.SetActive(true);
+        scaleSlider.gameObject.SetActive(true);
     }
 
     public void EditEndButtonClick()
     {
         touchMode = Mode.SelectMode;
-        ver1Button.SetActive(false);
-        ver2Button.SetActive(false);
         editEndButton.SetActive(false);
         rotateSlider.gameObject.SetActive(false);
         scaleSlider.gameObject.SetActive(false);
-        verChange = false;
-        target.GetComponent<BoxCollider>().enabled = true;
-        target.GetComponent<Renderer>().material.SetVector("_OutlineColor", new Vector4(255f, 255f, 255f, 0f));
         target = null;
     }
 }
