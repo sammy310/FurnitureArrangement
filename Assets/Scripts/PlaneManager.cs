@@ -6,7 +6,6 @@ using Vuforia;
 public class PlaneManager : MonoBehaviour
 {
     public static PlaneManager Instance { get; private set; } = null;
-    TouchHandler Touchhandler = null;
     private void Awake()
     {
         if (Instance)
@@ -32,10 +31,8 @@ public class PlaneManager : MonoBehaviour
 
     private void Start()
     {
-        Touchhandler = GameObject.Find("Manager").GetComponent<TouchHandler>();
         mPlaneFinder = FindObjectOfType<PlaneFinderBehaviour>();
         mContentPositioningBehaviour = mPlaneFinder.GetComponent<ContentPositioningBehaviour>();
-
         //placeableObjects = FindObjectsOfType<ObjectController>();
 
         mPlaneFinder.HitTestMode = HitTestMode.AUTOMATIC;
@@ -61,14 +58,14 @@ public class PlaneManager : MonoBehaviour
 
     public void HandleInteractiveHitTest(HitTestResult result)
     {
+
+        if (result == null)
+        {
+            Debug.LogError("Invalid hit test result!");
+            return;
+        }
         if (!CurrentFurniture.IsPlaced)
         {
-            if (result == null)
-            {
-                Debug.LogError("Invalid hit test result!");
-                return;
-            }
-
             if (CurrentFurniture == null) return;
 
             if (UI_Manager.Instance.IsPointerOverUI()) return;

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R3CMB05VXAN",
         "name": "com.DefaultCompany.VuforiaTest",
-        "processId": 7597,
+        "processId": 28285,
         "exited": false
     },
     "m_SelectedPriority": 2,
@@ -84,6 +84,72 @@
             "deviceId": "R3CMB05VXAN",
             "name": "com.DefaultCompany.VuforiaTest",
             "processId": 7597,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 3550,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 15100,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 17119,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 21949,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 23497,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 23945,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 24943,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 25662,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 26530,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 27381,
+            "exited": false
+        },
+        {
+            "deviceId": "R3CMB05VXAN",
+            "name": "com.DefaultCompany.VuforiaTest",
+            "processId": 28285,
             "exited": false
         }
     ],

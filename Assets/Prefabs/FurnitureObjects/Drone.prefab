@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657337756781193587}
   - component: {fileID: 657337756786243669}
+  - component: {fileID: 52512289161223469}
   m_Layer: 0
   m_Name: drone_geo
   m_TagString: Furniture
@@ -297,13 +298,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657337756781032787}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: -0.000000005918397}
+  m_LocalRotation: {x: -0.61237246, y: 0.3535534, z: 0.3535534, w: 0.61237246}
+  m_LocalPosition: {x: -0, y: 0.8, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657337756781193589}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 60, z: 0}
 --- !u!137 &657337756786243669
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -368,6 +369,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000008940697, y: 0.061049253, z: 0.000000029802322}
     m_Extent: {x: 0.4304242, y: 0.20995435, z: 0.43042403}
   m_DirtyAABB: 0
+--- !u!64 &52512289161223469
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657337756781032787}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 78122509d8ec13f44bf4508cb85fe4c3, type: 3}
 --- !u!1 &657337756781032789
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 657337756781193589}
   - component: {fileID: 657337756790539925}
-  - component: {fileID: 6175221048032921218}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Furniture
@@ -421,20 +435,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &6175221048032921218
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657337756781032789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &657337756781032791
 GameObject:
   m_ObjectHideFlags: 0

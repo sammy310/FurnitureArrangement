@@ -12,6 +12,8 @@ public class TouchHandler : MonoBehaviour
     public GameObject editButton;
     public Slider scaleSlider;
     public Slider rotateSlider;
+    public GameObject selectButton;
+    public GameObject ResetButton;
     bool isFirstTouch = true;
 
     float FirstDistance = 0.0f;
@@ -87,18 +89,19 @@ public class TouchHandler : MonoBehaviour
         RaycastHit hit;
 
         Ray touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        Physics.Raycast(touchRay, out hit);
-        if (target != null && target.tag == "Furniture" && target.gameObject != hit.collider.gameObject)
+        if (Physics.Raycast(touchRay, out hit))
         {
-            target = null;
-        }
-        if (hit.collider.tag == "Furniture")
-        {
-            target = hit.collider.gameObject;
-            FirstScale = hit.collider.gameObject.transform.localScale.x;
-            FirstRotation = hit.collider.gameObject.transform.localEulerAngles;
-            editButton.SetActive(true);
+            if (target != null && target.tag == "Furniture" && target.gameObject != hit.collider.gameObject)
+            {
+                target = null;
+            }
+            if (hit.collider.tag == "Furniture")
+            {
+                target = hit.collider.gameObject;
+                FirstScale = hit.collider.gameObject.transform.localScale.x;
+                FirstRotation = hit.collider.gameObject.transform.localEulerAngles;
+                editButton.SetActive(true);
+            }
         }
         else
         {
@@ -124,14 +127,22 @@ public class TouchHandler : MonoBehaviour
         touchMode = Mode.EditMode;
         editButton.SetActive(false);
         editEndButton.SetActive(true);
+        ResetButton.SetActive(false);
+        selectButton.SetActive(false);
         rotateSlider.gameObject.SetActive(true);
         scaleSlider.gameObject.SetActive(true);
+        scaleSlider.minValue = target.transform.lossyScale.x;
+        scaleSlider.maxValue = target.transform.lossyScale.x+1.0f;
+        scaleSlider.value = scaleSlider.minValue;
+        rotateSlider.value = rotateSlider.minValue;
     }
 
     public void EditEndButtonClick()
     {
         touchMode = Mode.SelectMode;
         editEndButton.SetActive(false);
+        ResetButton.SetActive(true);
+        selectButton.SetActive(true);
         rotateSlider.gameObject.SetActive(false);
         scaleSlider.gameObject.SetActive(false);
         target = null;
