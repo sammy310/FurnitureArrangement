@@ -14,6 +14,8 @@ public class TouchHandler : MonoBehaviour
     public Slider rotateSlider;
     public GameObject selectButton;
     public GameObject ResetButton;
+    public GameObject floorPrefab;
+    GameObject floorClone;
     bool isFirstTouch = true;
 
     float FirstDistance = 0.0f;
@@ -135,8 +137,13 @@ public class TouchHandler : MonoBehaviour
         scaleSlider.maxValue = target.transform.lossyScale.x+1.0f;
         scaleSlider.value = scaleSlider.minValue;
         rotateSlider.value = rotateSlider.minValue;
-    }
+        CreateFloor(target.transform.position);
 
+    }
+    public void CreateFloor(Vector3 targetPosition)
+    {
+        floorClone = Instantiate(floorPrefab, targetPosition, Quaternion.identity);
+    }
     public void EditEndButtonClick()
     {
         touchMode = Mode.SelectMode;
@@ -146,5 +153,6 @@ public class TouchHandler : MonoBehaviour
         rotateSlider.gameObject.SetActive(false);
         scaleSlider.gameObject.SetActive(false);
         target = null;
+        Destroy(floorClone);
     }
 }

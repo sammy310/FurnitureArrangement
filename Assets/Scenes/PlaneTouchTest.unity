@@ -227,6 +227,7 @@ MonoBehaviour:
   rotateSlider: {fileID: 882617821}
   selectButton: {fileID: 1011702704}
   ResetButton: {fileID: 647354466}
+  floorPrefab: {fileID: 5389671154871872512, guid: e0d02421e1f34014a9000767f47b478b, type: 3}
 --- !u!1 &66426443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5746823479077120842, guid: f26edacfaade8394195092f3993843db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0004597032
+      value: 12764.289
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f26edacfaade8394195092f3993843db, type: 3}
