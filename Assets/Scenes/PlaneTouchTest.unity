@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 291555313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc66f53d3a5f63945ae924f066c1ec61, type: 3}
+  m_Script: {fileID: 11500000, guid: 894cd599d194f418383abde1e8c1fb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   furnitureInfo: {fileID: 0}
@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 390805681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f56397ea4ac5d4741aac912c3d2f4d91, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b1a46845e5ed44e2b404e74455a0833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slots:
@@ -5297,8 +5297,8 @@ MonoBehaviour:
   furnitureBookMark: {fileID: 767426522}
   furnitureNameText: {fileID: 1369742730}
   furnitureInfoText: {fileID: 351518024}
-  marked: {fileID: 21300000, guid: 644793c1ecf44a94691ba81a7d1ce143, type: 3}
-  n_marked: {fileID: 21300000, guid: 74eaf484817ac024fa73a6a64afc091f, type: 3}
+  marked: {fileID: 21300000, guid: 244aab59078db4d80b9a3e9f8f1c7ce7, type: 3}
+  n_marked: {fileID: 21300000, guid: 94cdac963b4db49c18bb1b6ff3703ecb, type: 3}
 --- !u!114 &1338703103
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class Menu : MonoBehaviour
         bookMarkPanel.SetActive(false);
         infoPanel.SetActive(false);
 
-        allPanel.GetComponent<InventoryUI>().RedrawSlotUI();
+        allPanel.GetComponent<AllPanel>().RedrawSlotUI();
     }
 
     public void BookMarkBtnClicked()
@@ -53,7 +53,7 @@ public class Menu : MonoBehaviour
         bookMarkPanel.SetActive(true);
         infoPanel.SetActive(false);
 
-        bookMarkPanel.GetComponent<BookMarkUI>().RedrawSlotUI();
+        bookMarkPanel.GetComponent<BookMarkPanel>().RedrawSlotUI();
     }
 
     public void HomeBtnClicked()
@@ -71,12 +71,12 @@ public class Menu : MonoBehaviour
 
     public void RedrawAllPanel()
     {
-        allPanel.GetComponent<InventoryUI>().RedrawSlotUI();
+        allPanel.GetComponent<AllPanel>().RedrawSlotUI();
     }
 
     public void RedrawBookMarkPanel()
     {
-        bookMarkPanel.GetComponent<BookMarkUI>().RedrawSlotUI();
+        bookMarkPanel.GetComponent<BookMarkPanel>().RedrawSlotUI();
     }
 
 

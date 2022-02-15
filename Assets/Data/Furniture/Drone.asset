@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
   m_Name: Drone
   m_EditorClassIdentifier: 
-  furnitureName: Drone
   description: Drone
+  bookMark: 0
   furnitureObject: {fileID: 657337756781032789, guid: 781cfcbbac0319841bdb65b08d9351e9, type: 3}
+  furnitureName: Drone
+  furnitureImage: {fileID: 0}
+  furnitureSize: 
+  furnitureNum: 1
