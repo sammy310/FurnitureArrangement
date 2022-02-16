@@ -41,7 +41,7 @@ public class UI_Manager : MonoBehaviour
 
     public void OpenFurnitureSelectUI()
     {
-        furnitureSelectUI?.InitItemSelection(PrefabManager.Instance.furnitureInfos);
+        furnitureSelectUI?.ShowAllFurniture();
     }
 
 

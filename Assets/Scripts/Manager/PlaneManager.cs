@@ -58,12 +58,12 @@ public class PlaneManager : MonoBehaviour
 
     public void HandleInteractiveHitTest(HitTestResult result)
     {
-
         if (result == null)
         {
             Debug.LogError("Invalid hit test result!");
             return;
         }
+
         if (!CurrentFurniture.IsPlaced)
         {
             if (CurrentFurniture == null) return;

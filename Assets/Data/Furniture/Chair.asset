@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
   m_Name: Chair
   m_EditorClassIdentifier: 
+  hashKey: 8384458958512848896
   furnitureName: Chair
   description: Chair
+  bookMark: 0
   furnitureObject: {fileID: 5835080708933165476, guid: e8806487b148acc49a91f9446a3b5958, type: 3}
+  furnitureImage: {fileID: 0}
+  furnitureSize: 
+  furnitureNum: 0
