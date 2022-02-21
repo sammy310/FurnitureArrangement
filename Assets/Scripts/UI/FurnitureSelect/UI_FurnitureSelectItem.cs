@@ -11,21 +11,19 @@ public class ItemSelectedEvent : UnityEvent<UI_FurnitureSelectItem>
 
 }
 
-public class UI_FurnitureSelectItem : MonoBehaviour//, IPointerClickHandler
+public class UI_FurnitureSelectItem : MonoBehaviour
 {
-    [SerializeField] Image image;
-    [SerializeField] TMP_Text text_name;
+    [SerializeField] TextMeshProUGUI furnitureName;
     [SerializeField] Image furnitureImage;
     [SerializeField] Image bookmarkImage;
 
+    [SerializeField] Button selectButton;
     [SerializeField] Sprite[] bookmarkSprites;
-
-    //public ItemSelectedEvent OnItemSelected = new ItemSelectedEvent();
+    
     public ItemSelectedEvent OnItemBookmarkAdd = new ItemSelectedEvent();
     public ItemSelectedEvent OnItemBookmarkRemove = new ItemSelectedEvent();
 
     public Data_FurnitureInfo FurnitureInfo { get; private set; } = null;
-    //public bool IsSelected { get; private set; } = false;
     public bool IsBookmarked { get; private set; } = false;
 
     public long FurnitureHashKey => FurnitureInfo.hashKey;
@@ -33,35 +31,19 @@ public class UI_FurnitureSelectItem : MonoBehaviour//, IPointerClickHandler
     readonly Color DefaultColor = Color.white;
     readonly Color SelectionColor = new Color(1f, 0.5f, 0.5f);
     
-
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    if (IsSelected) return;
-
-    //    OnItemSelected.Invoke(this);
-    //}
-
+    
     public void SetItem(Data_FurnitureInfo furnitureInfo)
     {
         FurnitureInfo = furnitureInfo;
         furnitureImage.sprite = furnitureInfo.furnitureImage;
-        text_name.SetText(furnitureInfo.furnitureName);
-
-        //ResetSlotSelection();
+        furnitureName.SetText(furnitureInfo.furnitureName);
     }
 
-    //public void SetSlotSelection()
-    //{
-    //    IsSelected = true;
-    //    image.color = SelectionColor;
-    //}
-
-    //public void ResetSlotSelection()
-    //{
-    //    IsSelected = false;
-    //    image.color = DefaultColor;
-    //}
-
+    public void SetInfoUI(UI_FurnitureInfoUI furnitureInfoUI)
+    {
+        selectButton.onClick.AddListener(() => furnitureInfoUI.SetFurniture(this));
+    }
+    
     public void ShowItem()
     {
         gameObject.SetActive(true);
@@ -73,18 +55,23 @@ public class UI_FurnitureSelectItem : MonoBehaviour//, IPointerClickHandler
     }
 
 
+    public Sprite GetBookmarkSprite(bool isBookmared)
+    {
+        return isBookmared ? bookmarkSprites[1] : bookmarkSprites[0];
+    }
+
     public void ToggleBookmark()
     {
         IsBookmarked = !IsBookmarked;
 
+        bookmarkImage.sprite = GetBookmarkSprite(IsBookmarked);
+
         if (IsBookmarked)
         {
-            bookmarkImage.sprite = bookmarkSprites[1];
             OnItemBookmarkAdd.Invoke(this);
         }
         else
         {
-            bookmarkImage.sprite = bookmarkSprites[0];
             OnItemBookmarkRemove.Invoke(this);
         }
     }
