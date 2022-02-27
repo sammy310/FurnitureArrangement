@@ -43,16 +43,16 @@ public class PlaneManager : MonoBehaviour
     {
         if (CurrentFurniture == null) return;
 
-        Debug.LogError("Auto - IsPlaced : " + CurrentFurniture.IsPlaced);
+        //Debug.Log("Auto - IsPlaced : " + CurrentFurniture.IsPlaced);
         if (!CurrentFurniture.IsPlaced)
         {
             CurrentFurniture.DetachObjectFromAnchor();
             CurrentFurniture.SetNewPosition(result.Position);
-            string s = "";
-            s += "result : " + result.Position.ToString();
-            s += "\n\ntrans : " + CurrentFurniture.transform.position.ToString();
-            s += "\n\nanchor : " + CurrentFurniture.anchorBehaviour.transform.position.ToString();
-            Debug.LogError(s);
+            //string s = "";
+            //s += "result : " + result.Position.ToString();
+            //s += "\n\ntrans : " + CurrentFurniture.transform.position.ToString();
+            //s += "\n\nanchor : " + CurrentFurniture.anchorBehaviour.transform.position.ToString();
+            //Debug.Log(s);
         }
     }
 
@@ -64,10 +64,10 @@ public class PlaneManager : MonoBehaviour
             return;
         }
 
+        if (CurrentFurniture == null) return;
+
         if (!CurrentFurniture.IsPlaced)
         {
-            if (CurrentFurniture == null) return;
-
             if (UI_Manager.Instance.IsPointerOverUI()) return;
 
             Debug.Log("HandleInteractiveHitTest() called.");
