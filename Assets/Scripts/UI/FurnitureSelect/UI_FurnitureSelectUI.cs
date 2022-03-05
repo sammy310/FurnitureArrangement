@@ -15,8 +15,9 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     Data_Furniture furnitureInfos = null;
 
     List<UI_FurnitureSelectItem> selectItemList = new List<UI_FurnitureSelectItem>();
-    Dictionary<long, UI_FurnitureSelectItem> bookmarkItemDict = new Dictionary<long, UI_FurnitureSelectItem>(); 
-    
+    Dictionary<long, UI_FurnitureSelectItem> bookmarkItemDict = new Dictionary<long, UI_FurnitureSelectItem>();
+    bool isBeforeStarting = true;
+
     private void Awake()
     {
         canvas = GetComponent<Canvas>();
@@ -27,12 +28,16 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     {
         furnitureInfoUI.SetFurnitureSelectUI(this);
         InitFurnitureSelectUI(PrefabManager.Instance.furnitureInfos);
+
+        isBeforeStarting = false;
     }
 
     void InitFurnitureSelectUI(Data_Furniture furnitureInfos)
     {
         this.furnitureInfos = furnitureInfos;
-        
+
+        List<long> bookmarkData = SaveManager.LoadBookmarkData();
+
         foreach (Data_FurnitureInfo info in furnitureInfos.furnitureInfo)
         {
             UI_FurnitureSelectItem selectItem = Instantiate(PrefabManager.Instance.furnitureSelectItem, content).GetComponent<UI_FurnitureSelectItem>();
@@ -41,6 +46,11 @@ public class UI_FurnitureSelectUI : MonoBehaviour
             selectItem.OnItemBookmarkAdd.AddListener(AddBookmark);
             selectItem.OnItemBookmarkRemove.AddListener(RemoveBookmark);
             selectItemList.Add(selectItem);
+
+            if (bookmarkData != null && bookmarkData.Remove(selectItem.FurnitureHashKey))
+            {
+                selectItem.ToggleBookmark();
+            }
         }
         ResizeSelectUI(selectItemList.Count);
     }
@@ -93,10 +103,16 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     void AddBookmark(UI_FurnitureSelectItem selectItem)
     {
         bookmarkItemDict.Add(selectItem.FurnitureHashKey, selectItem);
+
+        if (!isBeforeStarting)
+            SaveManager.SaveBookmarkData(bookmarkItemDict);
     }
 
     void RemoveBookmark(UI_FurnitureSelectItem selectItem)
     {
         bookmarkItemDict.Remove(selectItem.FurnitureHashKey);
+
+        if (!isBeforeStarting)
+            SaveManager.SaveBookmarkData(bookmarkItemDict);
     }
 }
