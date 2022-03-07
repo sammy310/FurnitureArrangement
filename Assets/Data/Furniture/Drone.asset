@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Drone
   m_EditorClassIdentifier: 
   hashKey: 114310743561601024
-  furnitureName: Drone
+  furnitureName: 
   description: Drone
   bookMark: 0
   furnitureObject: {fileID: 657337756781032789, guid: 781cfcbbac0319841bdb65b08d9351e9, type: 3}
