@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -20}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchoredPosition: {x: -15, y: -15}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5115205325691573164
 CanvasRenderer:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 94cdac963b4db49c18bb1b6ff3703ecb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36586fe12bed740eba722b905a5420bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -421,12 +421,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.85
+  m_fontSize: 20
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 10
-  m_fontSizeMax: 32
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -527,5 +527,5 @@ MonoBehaviour:
   bookmarkImage: {fileID: 3777087230833360011}
   selectButton: {fileID: 2285438043506695732}
   bookmarkSprites:
-  - {fileID: 21300000, guid: 94cdac963b4db49c18bb1b6ff3703ecb, type: 3}
-  - {fileID: 21300000, guid: 244aab59078db4d80b9a3e9f8f1c7ce7, type: 3}
+  - {fileID: 21300000, guid: 36586fe12bed740eba722b905a5420bf, type: 3}
+  - {fileID: 21300000, guid: 3708e392ba82d4c95ab3ed08bfb78456, type: 3}
