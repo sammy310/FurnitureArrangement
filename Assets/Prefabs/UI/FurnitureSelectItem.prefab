@@ -188,7 +188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 36586fe12bed740eba722b905a5420bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc15912a3833a4b48bbe0cc97d50aff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -527,5 +527,5 @@ MonoBehaviour:
   bookmarkImage: {fileID: 3777087230833360011}
   selectButton: {fileID: 2285438043506695732}
   bookmarkSprites:
-  - {fileID: 21300000, guid: 36586fe12bed740eba722b905a5420bf, type: 3}
-  - {fileID: 21300000, guid: 3708e392ba82d4c95ab3ed08bfb78456, type: 3}
+  - {fileID: 21300000, guid: fc15912a3833a4b48bbe0cc97d50aff2, type: 3}
+  - {fileID: 21300000, guid: 603572e0aeb2944ee83b08b09e59b5b4, type: 3}
