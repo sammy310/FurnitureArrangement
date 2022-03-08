@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -110
       objectReference: {fileID: 0}
+    - target: {fileID: 3032933539750659710, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3127192414582947829, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -537,8 +541,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3127192414582947829, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127192414582947829, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127192414582947829, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -72
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3127192414582947829, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -548,6 +560,14 @@ PrefabInstance:
       propertyPath: m_text
       value: <
       objectReference: {fileID: 0}
+    - target: {fileID: 4022729926779168278, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022729926779168278, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d555a5f0bcc6b45acbc79f901fa4380b, type: 3}
     - target: {fileID: 5006756128308510433, guid: f0aaa2a4e6819a34d999ae7ee02a4f82, type: 3}
       propertyPath: m_Name
       value: FurnitureInfoUI
