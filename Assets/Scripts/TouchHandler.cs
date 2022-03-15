@@ -10,13 +10,13 @@ public class TouchHandler : MonoBehaviour
     GameObject target;
     public GameObject editEndButton;
     public GameObject editButton;
-    public Slider scaleSlider;
     public Slider rotateSlider;
     public GameObject floorPrefab;
-    public GameObject mainUI1;
-    public GameObject mainUI2;
-    GameObject floorClone;
+    public GameObject mainUI;
 
+    GameObject floorClone;
+    Collider[] collider1;
+    Collider[] collider2;
 
     float FirstScale;
     Vector3 FirstRotation;
@@ -106,11 +106,6 @@ public class TouchHandler : MonoBehaviour
         }
     }
 
-    public void ScaleScroll()
-    {
-        target.transform.localScale = new Vector3(scaleSlider.value, scaleSlider.value, scaleSlider.value);
-        UItouched = true;
-    }
 
     public void rotateScroll()
     {
@@ -124,14 +119,19 @@ public class TouchHandler : MonoBehaviour
         editButton.SetActive(false);
         editEndButton.SetActive(true);
         rotateSlider.gameObject.SetActive(true);
-        scaleSlider.gameObject.SetActive(true);
-        scaleSlider.minValue = target.transform.lossyScale.x;
-        scaleSlider.maxValue = target.transform.lossyScale.x+1.0f;
-        scaleSlider.value = scaleSlider.minValue;
-        rotateSlider.value = rotateSlider.minValue;
+        rotateSlider.value = target.transform.localEulerAngles.y;
+        Collider[] collider1 = target.GetComponents<Collider>();
+        Collider[] collider2 = target.GetComponentsInChildren<Collider>();
+        for (int i =0; i< collider1.Length;i++)
+        {
+            collider1[i].enabled = false;
+        }
+        for (int i = 0; i < collider2.Length; i++)
+        {
+            collider2[i].enabled = false;
+        }
         CreateFloor(target.transform.position);
-        mainUI1.SetActive(false);
-        mainUI2.SetActive(false);
+        mainUI.SetActive(false);
     }
     public void CreateFloor(Vector3 targetPosition)
     {
@@ -140,12 +140,20 @@ public class TouchHandler : MonoBehaviour
     public void EditEndButtonClick()
     {
         touchMode = Mode.SelectMode;
+        Collider[] collider1 = target.GetComponents<Collider>();
+        Collider[] collider2 = target.GetComponentsInChildren<Collider>();
+        for (int i = 0; i < collider1.Length; i++)
+        {
+            collider1[i].enabled = true;
+        }
+        for (int i = 0; i < collider2.Length; i++)
+        {
+            collider2[i].enabled = true;
+        }
         editEndButton.SetActive(false);
         rotateSlider.gameObject.SetActive(false);
-        scaleSlider.gameObject.SetActive(false);
         target = null;
         Destroy(floorClone);
-        mainUI1.SetActive(true);
-        mainUI2.SetActive(true);
+        mainUI.SetActive(true);
     }
 }

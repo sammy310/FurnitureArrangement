@@ -52,7 +52,6 @@ public class UI_FurnitureInfoUI : MonoBehaviour
         if (furnitureInfo == null) return;
 
         FurnitureManager.Instance.SetFurniture(FurnitureManager.Instance.CreateFurniture(furnitureInfo));
-
         EnableUI(false);
         furnitureSelectUI.EnableUI(false);
     }
