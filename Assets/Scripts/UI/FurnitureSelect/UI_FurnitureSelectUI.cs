@@ -9,6 +9,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     [SerializeField] RectTransform content;
 
     [SerializeField] UI_FurnitureInfoUI furnitureInfoUI;
+    [SerializeField] UI_FurnitureTypeSelectUI furnitureTypeSelectUI;
 
     GridLayoutGroup selectGridLayout;
 
@@ -61,6 +62,25 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     {
         canvas.enabled = isEnable;
         furnitureInfoUI.EnableUI(false);
+    }
+
+    public void ShowTypeFurniture(FurnitureType type)
+    {
+        EnableUI(true);
+        int typeCount = 0;
+        foreach (UI_FurnitureSelectItem item in selectItemList)
+        {
+            if(item.FurnitureInfo.furnitureType == type)
+            {
+                item.ShowItem();
+                typeCount++;
+            }
+            else
+            {
+                item.HideItem();
+            }
+            ResizeSelectUI(typeCount);
+        }
     }
 
     public void ShowAllFurniture()

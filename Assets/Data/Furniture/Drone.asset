@@ -20,3 +20,4 @@ MonoBehaviour:
   furnitureImage: {fileID: 0}
   furnitureSize: 
   furnitureNum: 1
+  furnitureType: 4

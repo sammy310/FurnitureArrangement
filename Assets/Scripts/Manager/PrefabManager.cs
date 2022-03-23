@@ -23,5 +23,6 @@ public class PrefabManager : MonoBehaviour
 
     [Header("- UI")]
     public GameObject furnitureSelectItem;
+    public GameObject furnitureTypeItem;
 
 }
