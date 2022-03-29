@@ -14,17 +14,15 @@ public enum FurnitureType
 [CreateAssetMenu(fileName = "FurnitureInfo", menuName = "Data/Data_FurnitureInfo", order = 0)]
 public class Data_FurnitureInfo : ScriptableObject
 {
-    [ContextMenuItem("�����", "GenerateHashKey")]
+    [ContextMenuItem("GenerateHashKey", "GenerateHashKey")]
     public long hashKey;
 
     public string furnitureName;
     public string description;
-
-    public bool bookMark; 
+    
     public GameObject furnitureObject;
     public Sprite furnitureImage;
     public string furnitureSize;
-    public int furnitureNum;
     public FurnitureType furnitureType;  
 
     void Reset()
