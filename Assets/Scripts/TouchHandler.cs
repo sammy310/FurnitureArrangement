@@ -3,23 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 public class TouchHandler : MonoBehaviour
 {
+    public static TouchHandler Instance { get; private set; } = null;
+
     Mode touchMode;
 
     GameObject target;
+
     public GameObject editEndButton;
+    public GameObject trashButton;
+    public GameObject bookmarkButton;
+    public GameObject furnitureText;
+    public GameObject cameraButton;
+    public GameObject resetButton;
+
     public GameObject editButton;
-    public Slider rotateSlider;
+
     public GameObject floorPrefab;
     public GameObject mainUI;
+    public TextMeshProUGUI furnitureName;
 
     GameObject floorClone;
     Collider[] collider1;
     Collider[] collider2;
 
-    float FirstScale;
-    Vector3 FirstRotation;
+    bool mIsFirstFrameWithTwoTouches;
+    float mCachedTouchAngle;
+    Vector3 mCachedAugmentationRotation;
 
     bool UItouched;
 
@@ -62,7 +74,21 @@ public class TouchHandler : MonoBehaviour
 
     void FurnitureControl()
     {
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 2)
+        {
+            GetTouchAngleAndDistance(Input.GetTouch(0), Input.GetTouch(1), out var currentTouchAngle);
+
+            if (mIsFirstFrameWithTwoTouches)
+            {
+                mCachedTouchAngle = currentTouchAngle;
+                mIsFirstFrameWithTwoTouches = false;
+            }
+
+            var angleDelta = currentTouchAngle - mCachedTouchAngle;
+
+            target.transform.localEulerAngles = mCachedAugmentationRotation - new Vector3(0, angleDelta * 3f, 0);
+        }
+        else if (Input.touchCount == 1)
         {
             if (!UItouched && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
             {
@@ -74,10 +100,22 @@ public class TouchHandler : MonoBehaviour
                 }
             }
         }
-        else if (Input.touchCount < 1)
+        if (Input.touchCount < 1)
         {
             UItouched = false;
         }
+        if (Input.touchCount < 2)
+        {
+            mCachedAugmentationRotation = target.transform.localEulerAngles;
+            mIsFirstFrameWithTwoTouches = true;
+        }
+    }
+
+    void GetTouchAngleAndDistance(Touch firstTouch, Touch secondTouch, out float touchAngle)
+    {
+        var diffY = firstTouch.position.y - secondTouch.position.y;
+        var diffX = firstTouch.position.x - secondTouch.position.x;
+        touchAngle = Mathf.Atan2(diffY, diffX) * Mathf.Rad2Deg;
     }
 
     void SelectObject(ref GameObject target)
@@ -94,8 +132,6 @@ public class TouchHandler : MonoBehaviour
             if (hit.collider.tag == "Furniture")
             {
                 target = hit.collider.gameObject;
-                FirstScale = hit.collider.gameObject.transform.localScale.x;
-                FirstRotation = hit.collider.gameObject.transform.localEulerAngles;
                 editButton.SetActive(true);
             }
         }
@@ -106,20 +142,14 @@ public class TouchHandler : MonoBehaviour
         }
     }
 
-
-    public void rotateScroll()
-    {
-        target.transform.localEulerAngles = new Vector3(0, rotateSlider.value, 0);
-        UItouched = true;
-    }
-
     public void EditButtonClick()
     {
         touchMode = Mode.EditMode;
-        editButton.SetActive(false);
-        editEndButton.SetActive(true);
-        rotateSlider.gameObject.SetActive(true);
-        rotateSlider.value = target.transform.localEulerAngles.y;
+        mCachedAugmentationRotation = target.transform.localEulerAngles;
+
+        mainUI.SetActive(false);
+
+        furnitureName.text = target.name.Replace("(Clone)","");
         Collider[] collider1 = target.GetComponents<Collider>();
         Collider[] collider2 = target.GetComponentsInChildren<Collider>();
         for (int i =0; i< collider1.Length;i++)
@@ -131,12 +161,17 @@ public class TouchHandler : MonoBehaviour
             collider2[i].enabled = false;
         }
         CreateFloor(target.transform.position);
-        mainUI.SetActive(false);
+        editButton.SetActive(false);
+        editEndButton.SetActive(true);
+        trashButton.SetActive(true);
+        bookmarkButton.SetActive(true);
+        furnitureText.SetActive(true);
     }
     public void CreateFloor(Vector3 targetPosition)
     {
         floorClone = Instantiate(floorPrefab, targetPosition, Quaternion.identity);
     }
+
     public void EditEndButtonClick()
     {
         touchMode = Mode.SelectMode;
@@ -150,10 +185,28 @@ public class TouchHandler : MonoBehaviour
         {
             collider2[i].enabled = true;
         }
-        editEndButton.SetActive(false);
-        rotateSlider.gameObject.SetActive(false);
         target = null;
         Destroy(floorClone);
         mainUI.SetActive(true);
+        trashButton.SetActive(false);
+        bookmarkButton.SetActive(false);
+        furnitureText.SetActive(false);
+        editEndButton.SetActive(false);
+    }
+    public void TrashButtonClick()
+    {
+        Destroy(target.gameObject);
+        GameObject[] furnitureWorld = GameObject.FindGameObjectsWithTag("Furniture");
+        if (furnitureWorld.Length > 1)
+        {
+            cameraButton.SetActive(true);
+            resetButton.SetActive(true);
+        }
+        else
+        {
+            cameraButton.SetActive(false);
+            resetButton.SetActive(false);
+        }
+        EditEndButtonClick();
     }
 }

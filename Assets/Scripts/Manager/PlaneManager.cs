@@ -18,7 +18,8 @@ public class PlaneManager : MonoBehaviour
 
     PlaneFinderBehaviour mPlaneFinder;
     ContentPositioningBehaviour mContentPositioningBehaviour;
-    
+    public GameObject cameraButton;
+    public GameObject resetButton;
     
 
     public Furniture CurrentFurniture => FurnitureManager.Instance.CurrentFurniture;
@@ -94,6 +95,18 @@ public class PlaneManager : MonoBehaviour
             //}
 
             CurrentFurniture.PlaceObjectAtAnchor();
+
+            GameObject[] furnitureWorld = GameObject.FindGameObjectsWithTag("Furniture");
+            if (furnitureWorld.Length > 0)
+            {
+                cameraButton.SetActive(true);
+                resetButton.SetActive(true);
+            }
+            else
+            {
+                cameraButton.SetActive(false);
+                resetButton.SetActive(false);
+            }
         }
     }
 

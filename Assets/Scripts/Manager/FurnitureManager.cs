@@ -5,7 +5,8 @@ using UnityEngine;
 public class FurnitureManager : MonoBehaviour
 {
     public static FurnitureManager Instance { get; private set; } = null;
-
+    public GameObject cameraButton;
+    public GameObject resetButton;
     private void Awake()
     {
         if (Instance)
@@ -42,6 +43,10 @@ public class FurnitureManager : MonoBehaviour
         return furniture;
     }
 
+    public int ListIsEmpty()
+    {
+        return furnitures?.Count ?? 0;
+    }
     public void SetFurniture(Furniture furniture)
     {
         CurrentFurniture = furniture;
@@ -54,7 +59,8 @@ public class FurnitureManager : MonoBehaviour
             Destroy(furniture.gameObject);
         }
         furnitures.Clear();
-
+        cameraButton.SetActive(false);
+        resetButton.SetActive(false);
         CurrentFurniture = null;
     }
 

@@ -1493,8 +1493,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editEndButton: {fileID: 548155226}
   editButton: {fileID: 1746601909}
-  scaleSlider: {fileID: 2118867199}
   rotateSlider: {fileID: 427679089}
+  floorPrefab: {fileID: 0}
+  mainUI: {fileID: 0}
 --- !u!4 &1262393856
 Transform:
   m_ObjectHideFlags: 0
