@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
+  m_Name: BenchPress_2
+  m_EditorClassIdentifier: 
+  hashKey: 6406351228481044480
+  furnitureName: Incline BenchPress
+  description: It's a sturdy bench press. You can lie down and train your biceps
+    and triceps, and there is a cradle that can hold dumbbells together.
+  furnitureObject: {fileID: 1000012460870684, guid: ca06cc9161430e74eb57447344877541, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 99717a2bdfe79da4f92cde5df9b090cf, type: 3}
+  furnitureSize: 
+  furnitureType: 5

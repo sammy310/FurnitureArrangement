@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
+  m_Name: ArmChair
+  m_EditorClassIdentifier: 
+  hashKey: 6406351228481044480
+  furnitureName: Arm Chair
+  description: It is an armchair finished with luxurious leather. The backrest is
+    inclined at an appropriate slope according to the human body structure.
+  furnitureObject: {fileID: 1000013432996786, guid: 5fe24ea21c997ef4ebbcfd0e53a10505, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 01a8f536606221a4789e20eeaa6a1016, type: 3}
+  furnitureSize: 
+  furnitureType: 2

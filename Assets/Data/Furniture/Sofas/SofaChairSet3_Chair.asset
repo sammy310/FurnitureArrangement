@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
+  m_Name: SofaChairSet3_Chair
+  m_EditorClassIdentifier: 
+  hashKey: 6406351228481044480
+  furnitureName: White Sofa
+  description: It is a white leather sofa for one person. A little beige color is
+    mixed to reduce concerns about fading. It is made of a soft and hard material.
+  furnitureObject: {fileID: 1000010695444930, guid: 62b71c75cd7412c409462f73e1250bc7, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 205f8562679028f499120eb98b7546fc, type: 3}
+  furnitureSize: 
+  furnitureType: 4

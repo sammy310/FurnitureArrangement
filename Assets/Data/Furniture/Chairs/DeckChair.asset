@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
+  m_Name: DeckChair
+  m_EditorClassIdentifier: 
+  hashKey: 6406351228481044480
+  furnitureName: Deck Chair
+  description: A good plastic chair to use in schools or academies.Cost-efficient
+    and more luxurious.
+  furnitureObject: {fileID: 1000011388997758, guid: 279b3816b5552d340a2d3318653e15ec, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 0a6ffdd8324aa154f81232b9df68a74c, type: 3}
+  furnitureSize: 
+  furnitureType: 2
