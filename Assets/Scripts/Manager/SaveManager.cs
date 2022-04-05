@@ -14,7 +14,7 @@ public static class SaveManager
         return Application.persistentDataPath + filename;
     }
 
-    public static void SaveBookmarkData(Dictionary<long, UI_FurnitureSelectItem> bookmark)
+    public static void SaveBookmarkData(Dictionary<string, UI_FurnitureSelectItem> bookmark)
     {
         if (bookmark == null) return;
 
@@ -30,7 +30,7 @@ public static class SaveManager
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(savePath, FileMode.Create);
 
-            List<long> bookmarkData = new List<long>();
+            List<string> bookmarkData = new List<string>();
             foreach (var dic in bookmark)
             {
                 bookmarkData.Add(dic.Key);
@@ -40,7 +40,7 @@ public static class SaveManager
         }
     }
 
-    public static List<long> LoadBookmarkData()
+    public static List<string> LoadBookmarkData()
     {
         string savePath = GetSavePath(SaveFileName_Bookmark);
         if (File.Exists(savePath))
@@ -48,7 +48,7 @@ public static class SaveManager
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(savePath, FileMode.Open);
 
-            List<long> bookmarkData = formatter.Deserialize(stream) as List<long>;
+            List<string> bookmarkData = formatter.Deserialize(stream) as List<string>;
             stream.Close();
 
             return bookmarkData;

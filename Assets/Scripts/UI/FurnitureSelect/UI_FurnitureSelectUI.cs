@@ -19,7 +19,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     Data_Furniture furnitureInfos = null;
 
     List<UI_FurnitureSelectItem> selectItemList = new List<UI_FurnitureSelectItem>();
-    Dictionary<long, UI_FurnitureSelectItem> bookmarkItemDict = new Dictionary<long, UI_FurnitureSelectItem>();
+    Dictionary<string, UI_FurnitureSelectItem> bookmarkItemDict = new Dictionary<string, UI_FurnitureSelectItem>();
     bool isBeforeStarting = true;
 
     private void Awake()
@@ -40,7 +40,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     {
         this.furnitureInfos = furnitureInfos;
 
-        List<long> bookmarkData = SaveManager.LoadBookmarkData();
+        List<string> bookmarkData = SaveManager.LoadBookmarkData();
 
         foreach (Data_FurnitureInfo info in furnitureInfos.furnitureInfo)
         {
