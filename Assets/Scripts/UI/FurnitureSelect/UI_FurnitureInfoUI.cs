@@ -13,7 +13,7 @@ public class UI_FurnitureInfoUI : MonoBehaviour
     [SerializeField] Image bookmarkImage;
 
     UI_FurnitureSelectUI furnitureSelectUI;
-
+    UI_FurnitureTypeSelectUI furnitureTypeSelectUI;
     UI_FurnitureSelectItem furnitureItem;
     Data_FurnitureInfo furnitureInfo;
 
@@ -25,6 +25,11 @@ public class UI_FurnitureInfoUI : MonoBehaviour
     public void SetFurnitureSelectUI(UI_FurnitureSelectUI furnitureSelectUI)
     {
         this.furnitureSelectUI = furnitureSelectUI;
+    }
+
+    public void SetFurnitureTypeSelectUI(UI_FurnitureTypeSelectUI furnitureTypeSelectUI)
+    {
+        this.furnitureTypeSelectUI = furnitureTypeSelectUI;
     }
 
     public void SetFurniture(UI_FurnitureSelectItem furnitureItem)
@@ -54,6 +59,7 @@ public class UI_FurnitureInfoUI : MonoBehaviour
         FurnitureManager.Instance.SetFurniture(FurnitureManager.Instance.CreateFurniture(furnitureInfo));
         EnableUI(false);
         furnitureSelectUI.EnableUI(false);
+        furnitureTypeSelectUI.EnableUI(false);
     }
 
     public void ToggleBookmark()

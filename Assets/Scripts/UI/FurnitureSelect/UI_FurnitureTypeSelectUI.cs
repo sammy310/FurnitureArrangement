@@ -25,6 +25,7 @@ public class UI_FurnitureTypeSelectUI : MonoBehaviour
     private void Start()
     {   
         InitFurnitureSelectUI();
+        furnitureInfoUI.SetFurnitureTypeSelectUI(this);
     }
 
     void InitFurnitureSelectUI()
