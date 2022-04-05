@@ -45,4 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   furnitureInfos: {fileID: 11400000, guid: c57354c01946a25478972f8fc1ad23b9, type: 2}
   furniturePrefab: {fileID: 2650719919303316817, guid: ad94540b9185f8746ad269f7647cbd6d, type: 3}
-  furnitureSelectItem: {fileID: 839677354155532650, guid: fca53f12d60b2c948b27c4c54427196d, type: 3}
+  furnitureSelectItem: {fileID: 8476290088756575453, guid: 62c35498a87b364459cca29dfcabe1b2, type: 3}
+  furnitureTypeItem: {fileID: 8476290088756575453, guid: 6734b8d9359b141e1ad0af758ca204c0, type: 3}
+  sizeCubePrefab: {fileID: 5190132063804837432, guid: 6412f1a68362a29468d0d6d97426ba6d, type: 3}

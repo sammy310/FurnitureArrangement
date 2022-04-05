@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Sleep Lamp
   description: It is a desk lamp that emits light evenly in a round shape. Brightness
     can be adjusted.
+  bookMark: 0
   furnitureObject: {fileID: 1000012854880012, guid: 729564fcfba74d3418bf3370afb8ddcc, type: 3}
-  furnitureImage: {fileID: 21300000, guid: d0dd3edf80f1d79488e232ced59aab00, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 6c3a967a297d54f4591421297f0718fa, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 1

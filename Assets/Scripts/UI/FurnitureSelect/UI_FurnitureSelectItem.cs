@@ -26,7 +26,7 @@ public class UI_FurnitureSelectItem : MonoBehaviour
     public Data_FurnitureInfo FurnitureInfo { get; private set; } = null;
     public bool IsBookmarked { get; private set; } = false;
 
-    public long FurnitureHashKey => FurnitureInfo.hashKey;
+    public string FurnitureHashKey => FurnitureInfo.furnitureName;
 
     readonly Color DefaultColor = Color.white;
     readonly Color SelectionColor = new Color(1f, 0.5f, 0.5f);

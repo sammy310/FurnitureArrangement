@@ -25,4 +25,7 @@ public class PrefabManager : MonoBehaviour
     public GameObject furnitureSelectItem;
     public GameObject furnitureTypeItem;
 
+    [Header("- Tools")]
+    public GameObject sizeCubePrefab;
+
 }

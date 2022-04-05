@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Body Pillow
   description: It's a body pillow that's good to hug when you sleep with. It is soft
     and cool, so you can sleep comfortably in summer.
+  bookMark: 0
   furnitureObject: {fileID: 1000011249693040, guid: fad368ed6778c184289ae758bdf9129e, type: 3}
-  furnitureImage: {fileID: 21300000, guid: f36396c647cc1d24e8816976f7719974, type: 3}
+  furnitureImage: {fileID: 21300000, guid: f24f8e4e803e8d843b851e817e14dd86, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 0

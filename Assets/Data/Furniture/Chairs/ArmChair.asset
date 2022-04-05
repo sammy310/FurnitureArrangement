@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Arm Chair
   description: It is an armchair finished with luxurious leather. The backrest is
     inclined at an appropriate slope according to the human body structure.
+  bookMark: 0
   furnitureObject: {fileID: 1000013432996786, guid: 5fe24ea21c997ef4ebbcfd0e53a10505, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 01a8f536606221a4789e20eeaa6a1016, type: 3}
+  furnitureImage: {fileID: 21300000, guid: be8e4739c0c716343b0bb1155b318366, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 2

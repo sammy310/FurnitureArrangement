@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Reading Lamp
   description: It's a good lighting for reading books. It gives off a soft glow that
     doesn't strain your eyes. Brightness can be adjusted.
+  bookMark: 0
   furnitureObject: {fileID: 1000013788503666, guid: 579ef0e9506979e41a8ad768a75e7eac, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 159d5f008ee3ee044ad7e8444a0fa387, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 094942a74e839574bb044dd2a53ded79, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 1

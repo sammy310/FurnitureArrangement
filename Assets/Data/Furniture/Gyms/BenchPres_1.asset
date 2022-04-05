@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: General Line BenchPress
   description: It's a sturdy bench press. It contains dumbbells that can control
     weight, and tilt can also be adjusted.
+  bookMark: 0
   furnitureObject: {fileID: 1000013717381910, guid: e741ee59b38c0af4c8eb3a6473a792ce, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 2aa1996e5e882ef4589a10f69fbb1222, type: 3}
+  furnitureImage: {fileID: 21300000, guid: c27f41bfe74a50d4286d3bf0c98cf5bd, type: 3}
   furnitureSize: 
-  furnitureType: 5
+  furnitureNum: 0
+  furnitureType: 4

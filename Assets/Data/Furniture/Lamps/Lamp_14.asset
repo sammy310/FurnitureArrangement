@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Circular Lamp
   description: It's a good mood light to turn on at the bedside before going to bed.
     It is a light with a soft color.
+  bookMark: 0
   furnitureObject: {fileID: 1000011967555466, guid: 2448c8af647d4e242992a5995186822f, type: 3}
-  furnitureImage: {fileID: 21300000, guid: f6d8427547c33e74298b9beae2df8ffa, type: 3}
+  furnitureImage: {fileID: 21300000, guid: e21946cee67fa7841ad08be7e48b2ac2, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 1

@@ -18,23 +18,20 @@ public class PlaneManager : MonoBehaviour
 
     PlaneFinderBehaviour mPlaneFinder;
     ContentPositioningBehaviour mContentPositioningBehaviour;
+
     public GameObject cameraButton;
     public GameObject resetButton;
     
-
+    
     public Furniture CurrentFurniture => FurnitureManager.Instance.CurrentFurniture;
-    //public ObjectController CurrentFurnitureController => FurnitureManager.Instance.CurrentFurniture.Controller;
+    
+    public HitTestResult LastHitTestResult { get; private set; } = null;
 
-    //ObjectController[] placeableObjects;
-    //List<ObjectController> placedObjects = new List<ObjectController>();
-    //public int CurrentObejctIndex { get; private set; } = 0;
-    //public ObjectController CurrentObject => placeableObjects[CurrentObejctIndex];
 
     private void Start()
     {
         mPlaneFinder = FindObjectOfType<PlaneFinderBehaviour>();
         mContentPositioningBehaviour = mPlaneFinder.GetComponent<ContentPositioningBehaviour>();
-        //placeableObjects = FindObjectsOfType<ObjectController>();
 
         mPlaneFinder.HitTestMode = HitTestMode.AUTOMATIC;
     }
@@ -42,6 +39,11 @@ public class PlaneManager : MonoBehaviour
 
     public void HandleAutomaticHitTest(HitTestResult result)
     {
+        if (result != null)
+        {
+            LastHitTestResult = result;
+        }
+
         if (CurrentFurniture == null) return;
 
         //Debug.Log("Auto - IsPlaced : " + CurrentFurniture.IsPlaced);

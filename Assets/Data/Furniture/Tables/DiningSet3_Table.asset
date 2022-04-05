@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Wood Dining Table
   description: It's a luxurious wooden desk. It can be used for a long time with
     a clean finish, and the legs are made of iron, so it is hard.
+  bookMark: 0
   furnitureObject: {fileID: 1000011526524994, guid: 349553eb53108554ca03c037aebcd452, type: 3}
-  furnitureImage: {fileID: 21300000, guid: b0520dec64c7fc24da2d5968d608ff34, type: 3}
+  furnitureImage: {fileID: 21300000, guid: b9bdb3de25ab0c44ba3f6cb35a594944, type: 3}
   furnitureSize: 
-  furnitureType: 3
+  furnitureNum: 0
+  furnitureType: 5

@@ -17,7 +17,9 @@ MonoBehaviour:
   description: It is a brown mink sofa for one person. It is soft and moderately
     fluffy, and the armrest is wide and flat, so it is good to put drinks or snacks
     on top.
+  bookMark: 0
   furnitureObject: {fileID: 1000014000492654, guid: e8974d1b596ce3749b0b70143e50ab87, type: 3}
-  furnitureImage: {fileID: 21300000, guid: b6deb7e11d84f66469c146e927fc9181, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 0f4e05ee6cccd3a4b96ab4632c062473, type: 3}
   furnitureSize: 
-  furnitureType: 4
+  furnitureNum: 0
+  furnitureType: 3

@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Deck Table
   description: It is a light and simple office desk. It is not large, so it can be
     efficiently arranged even in a narrow space.
+  bookMark: 0
   furnitureObject: {fileID: 1000014190650676, guid: c238c05546cdfd14aab5195cb0186715, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 5acfcdda34eebfd4b9bf972ac2b66c2e, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 9d6b4b6367d8a3149961205a36836e1c, type: 3}
   furnitureSize: 
-  furnitureType: 3
+  furnitureNum: 0
+  furnitureType: 5

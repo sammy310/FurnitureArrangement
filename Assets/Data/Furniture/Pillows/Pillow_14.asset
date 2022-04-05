@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Basic Pillow
   description: It's a sleeping pillow. It's soft and cotton, so it's good for people
     with sensitive skin to use.
+  bookMark: 0
   furnitureObject: {fileID: 1000010445495750, guid: 10875e3d127a28d4eac638a56cdc2b04, type: 3}
-  furnitureImage: {fileID: 21300000, guid: c386abd8c8fd92d48996cd722ea7f5fb, type: 3}
+  furnitureImage: {fileID: 21300000, guid: e21946cee67fa7841ad08be7e48b2ac2, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 0
