@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_FurnitureSelectUI : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UI_FurnitureSelectUI : MonoBehaviour
 
     [SerializeField] UI_FurnitureInfoUI furnitureInfoUI;
     [SerializeField] UI_FurnitureTypeSelectUI furnitureTypeSelectUI;
+
+    [SerializeField] TextMeshProUGUI pageName;
 
     GridLayoutGroup selectGridLayout;
 
@@ -67,6 +70,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     public void ShowTypeFurniture(FurnitureType type)
     {
         EnableUI(true);
+        pageName.SetText(type.ToString());
         int typeCount = 0;
         foreach (UI_FurnitureSelectItem item in selectItemList)
         {
@@ -97,7 +101,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     public void ShowBookmarkedFurniture()
     {
         EnableUI(true);
-        
+        pageName.SetText("Your wishlist");
         foreach (UI_FurnitureSelectItem item in selectItemList)
         {
             if (item.IsBookmarked)

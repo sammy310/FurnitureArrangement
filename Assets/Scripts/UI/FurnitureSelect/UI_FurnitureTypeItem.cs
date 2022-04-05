@@ -27,7 +27,7 @@ public class UI_FurnitureTypeItem : MonoBehaviour
     public void ShowTypeItems(UI_FurnitureTypeSelectUI furnitureTypeSelectUI, UI_FurnitureSelectUI furnitureSelectUI)
     {
         Debug.Log("Click");
-        selectButton.onClick.AddListener(() => furnitureTypeSelectUI.EnableUI(false));
+        ///selectButton.onClick.AddListener(() => furnitureTypeSelectUI.EnableUI(false));
         selectButton.onClick.AddListener(() => furnitureSelectUI.ShowTypeFurniture(furnitureType));
     }
 
