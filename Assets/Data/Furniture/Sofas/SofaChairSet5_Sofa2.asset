@@ -17,7 +17,9 @@ MonoBehaviour:
   description: It is a two-person leather sofa without armrests. It is a sofa that
     is good for watching movies as if lying down because the chair is wide and the
     back is inclined.
+  bookMark: 0
   furnitureObject: {fileID: 1000013283612614, guid: 3074ead0891059b4bafc5d6985b0917f, type: 3}
   furnitureImage: {fileID: 21300000, guid: 2ef25c750e1a93f498c92f2937f1730a, type: 3}
   furnitureSize: 
-  furnitureType: 4
+  furnitureNum: 0
+  furnitureType: 3

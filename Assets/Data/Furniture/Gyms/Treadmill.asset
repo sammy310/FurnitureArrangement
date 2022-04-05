@@ -17,7 +17,9 @@ MonoBehaviour:
   description: It is a treadmill where you can do aerobic exercise indoors. Speed
     control, slope control, time check, and calories consumed can be checked on the
     previous display.
+  bookMark: 0
   furnitureObject: {fileID: 1000010857665446, guid: ea32f0d347d8d0546815a0fee3fde5eb, type: 3}
   furnitureImage: {fileID: 21300000, guid: e1d257b2346fde1499f61af1c3785259, type: 3}
   furnitureSize: 
-  furnitureType: 5
+  furnitureNum: 0
+  furnitureType: 4

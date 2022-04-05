@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Incline BenchPress
   description: It's a sturdy bench press. You can lie down and train your biceps
     and triceps, and there is a cradle that can hold dumbbells together.
+  bookMark: 0
   furnitureObject: {fileID: 1000012460870684, guid: ca06cc9161430e74eb57447344877541, type: 3}
   furnitureImage: {fileID: 21300000, guid: 99717a2bdfe79da4f92cde5df9b090cf, type: 3}
   furnitureSize: 
-  furnitureType: 5
+  furnitureNum: 0
+  furnitureType: 4

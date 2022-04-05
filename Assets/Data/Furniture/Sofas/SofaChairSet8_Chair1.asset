@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Bagie Sofa Chair
   description: a sofa with no armrests and backrests. It is also good to buy it with
     a sofa and use it more widely.
+  bookMark: 0
   furnitureObject: {fileID: 1000011090733286, guid: c935dbf877013d34c835e3f130205486, type: 3}
   furnitureImage: {fileID: 21300000, guid: 0e992a8a0f2ca6e4ba49d17d768b05df, type: 3}
   furnitureSize: 
-  furnitureType: 4
+  furnitureNum: 0
+  furnitureType: 3

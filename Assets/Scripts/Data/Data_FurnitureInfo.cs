@@ -8,7 +8,8 @@ public enum FurnitureType
     Lamps,
     Chairs,
     Sofas,
-    Gyms
+    Gyms,
+    Tables
 }
 
 [CreateAssetMenu(fileName = "FurnitureInfo", menuName = "Data/Data_FurnitureInfo", order = 0)]
