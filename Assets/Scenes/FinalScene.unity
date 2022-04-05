@@ -856,7 +856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &291951179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1226,7 +1226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &356397489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1245,7 +1245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 172, y: -45}
+  m_AnchoredPosition: {x: 162, y: -45}
   m_SizeDelta: {x: 120, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356397490
@@ -1957,12 +1957,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b914ca2484ae644a9812647aa68455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookmarkSprite:
+  - {fileID: 21300000, guid: fc15912a3833a4b48bbe0cc97d50aff2, type: 3}
+  - {fileID: 21300000, guid: 603572e0aeb2944ee83b08b09e59b5b4, type: 3}
   editEndButton: {fileID: 351665424}
   trashButton: {fileID: 93200245}
   bookmarkButton: {fileID: 1276993799}
   furnitureText: {fileID: 2074717030}
   cameraButton: {fileID: 291951178}
   resetButton: {fileID: 356397488}
+  furnitureSelectUI: {fileID: 560431148}
+  furnitureDataInfo: {fileID: 11400000, guid: c57354c01946a25478972f8fc1ad23b9, type: 2}
   editButton: {fileID: 131171070}
   floorPrefab: {fileID: 5389671154871872512, guid: e0d02421e1f34014a9000767f47b478b, type: 3}
   mainUI: {fileID: 1075170299}

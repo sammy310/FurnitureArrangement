@@ -55,7 +55,6 @@ public class UI_FurnitureInfoUI : MonoBehaviour
         EnableUI(false);
         furnitureSelectUI.EnableUI(false);
     }
-
     public void ToggleBookmark()
     {
         if (furnitureItem == null) return;

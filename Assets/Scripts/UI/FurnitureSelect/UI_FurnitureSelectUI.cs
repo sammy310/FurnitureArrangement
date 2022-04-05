@@ -123,7 +123,6 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     void AddBookmark(UI_FurnitureSelectItem selectItem)
     {
         bookmarkItemDict.Add(selectItem.FurnitureHashKey, selectItem);
-
         if (!isBeforeStarting)
             SaveManager.SaveBookmarkData(bookmarkItemDict);
     }
@@ -134,5 +133,21 @@ public class UI_FurnitureSelectUI : MonoBehaviour
 
         if (!isBeforeStarting)
             SaveManager.SaveBookmarkData(bookmarkItemDict);
+    }
+
+    public bool BookmarkCheck(long hashkey)
+    {
+        bool result = false;
+        if (bookmarkItemDict.ContainsKey(hashkey))
+        {
+            Debug.Log("가구 찾음");
+            UI_FurnitureSelectItem clone = bookmarkItemDict[hashkey];
+            result = clone.IsBookmarked;
+        }
+        else
+        {
+            Debug.Log("가구 못찾음");
+        }
+        return result;
     }
 }

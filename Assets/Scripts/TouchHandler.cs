@@ -11,14 +11,15 @@ public class TouchHandler : MonoBehaviour
     Mode touchMode;
 
     GameObject target;
-
+    public Sprite[] bookmarkSprite;
     public GameObject editEndButton;
     public GameObject trashButton;
     public GameObject bookmarkButton;
     public GameObject furnitureText;
     public GameObject cameraButton;
     public GameObject resetButton;
-
+    public UI_FurnitureSelectUI furnitureSelectUI;
+    public Data_Furniture furnitureDataInfo;
     public GameObject editButton;
 
     public GameObject floorPrefab;
@@ -150,6 +151,22 @@ public class TouchHandler : MonoBehaviour
         mainUI.SetActive(false);
 
         furnitureName.text = target.name.Replace("(Clone)","");
+        foreach (var furnitureinfo in furnitureDataInfo.furnitureInfo)
+        {
+            if (furnitureinfo.furnitureName == furnitureName.text)
+            {
+                if (furnitureSelectUI.BookmarkCheck(furnitureinfo.hashKey))
+                {
+                    Debug.Log("가구 북마크 진입");
+                    bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
+                }
+                else
+                {
+                    Debug.Log("가구 북마크 진입");
+                    bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
+                }
+            }
+        }
         Collider[] collider1 = target.GetComponents<Collider>();
         Collider[] collider2 = target.GetComponentsInChildren<Collider>();
         for (int i =0; i< collider1.Length;i++)
