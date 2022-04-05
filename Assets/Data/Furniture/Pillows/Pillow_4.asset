@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Stripe Pillow
   description: It is a square striped cushion. It is moderately hard and easy to
     use for design purposes.
+  bookMark: 0
   furnitureObject: {fileID: 1000012158640402, guid: fcd71a008d0230944815b551b7852a78, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 45413b5b6af32a3419cff242b884616b, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 9b1e53c0243b4a74791f5b7203483a87, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 0

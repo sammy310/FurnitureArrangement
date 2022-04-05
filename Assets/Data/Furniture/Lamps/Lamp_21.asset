@@ -16,7 +16,9 @@ MonoBehaviour:
   furnitureName: Large Mood Lamp
   description: It's a large mood light. Brightness can be adjusted, and there is
     a reservation function.
+  bookMark: 0
   furnitureObject: {fileID: 1000012737298168, guid: 68ef50e2b3a60e5459b709ee481fbd72, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 844d8f96e7b0da3468dee559b0941d42, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 052245b5bcf815c42b7037ae38fa6c11, type: 3}
   furnitureSize: 
+  furnitureNum: 0
   furnitureType: 1

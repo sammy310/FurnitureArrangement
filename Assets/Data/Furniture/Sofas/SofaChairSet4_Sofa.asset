@@ -19,7 +19,7 @@ MonoBehaviour:
     on top.
   bookMark: 0
   furnitureObject: {fileID: 1000011669042050, guid: 6c6a9eef25e17e94882e2c82836c397b, type: 3}
-  furnitureImage: {fileID: 21300000, guid: bcdc14a948f7e6d409fb1e3ba4456ce7, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 2a59a20db773f114c8483868a9f6901d, type: 3}
   furnitureSize: 
   furnitureNum: 0
   furnitureType: 3

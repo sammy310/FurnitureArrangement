@@ -18,7 +18,7 @@ MonoBehaviour:
     luxurious atmosphere.
   bookMark: 0
   furnitureObject: {fileID: 1000010838027902, guid: ecd20e49b25ced241acd607765d7b9a4, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 0b879255aee1ea04a93c8a12cc130af8, type: 3}
+  furnitureImage: {fileID: 21300000, guid: d2c00f7ece853134bb3d35d471248d95, type: 3}
   furnitureSize: 
   furnitureNum: 0
   furnitureType: 5

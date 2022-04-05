@@ -18,7 +18,7 @@ MonoBehaviour:
     and triceps, and there is a cradle that can hold dumbbells together.
   bookMark: 0
   furnitureObject: {fileID: 1000012460870684, guid: ca06cc9161430e74eb57447344877541, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 99717a2bdfe79da4f92cde5df9b090cf, type: 3}
+  furnitureImage: {fileID: 21300000, guid: d18192cabbd457044a9ea64af5ae6ff7, type: 3}
   furnitureSize: 
   furnitureNum: 0
   furnitureType: 4

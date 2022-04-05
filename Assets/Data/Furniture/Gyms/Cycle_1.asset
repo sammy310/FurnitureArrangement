@@ -18,7 +18,7 @@ MonoBehaviour:
     can be checked through the display attached to the front.
   bookMark: 0
   furnitureObject: {fileID: 1000011274226080, guid: b6b77de3ebcad004ca58165d6d787454, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 5c05bbd6d1b1efd4f991cfed99c76344, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 050b26c6b72b7d644b3bff6f7d4f82ba, type: 3}
   furnitureSize: 
   furnitureNum: 0
   furnitureType: 4
