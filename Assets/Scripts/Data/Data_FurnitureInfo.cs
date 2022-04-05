@@ -20,12 +20,10 @@ public class Data_FurnitureInfo : ScriptableObject
 
     public string furnitureName;
     public string description;
-
-    public bool bookMark; 
+    
     public GameObject furnitureObject;
     public Sprite furnitureImage;
     public string furnitureSize;
-    public int furnitureNum;
     public FurnitureType furnitureType;  
 
     void Reset()
