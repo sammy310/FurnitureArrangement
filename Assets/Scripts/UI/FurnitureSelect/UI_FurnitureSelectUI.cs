@@ -139,7 +139,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
             SaveManager.SaveBookmarkData(bookmarkItemDict);
     }
 
-    public bool BookmarkCheck(long hashkey)
+    public bool BookmarkCheck(string hashkey)
     {
         bool result = false;
         if (bookmarkItemDict.ContainsKey(hashkey))

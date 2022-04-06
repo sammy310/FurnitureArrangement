@@ -155,7 +155,7 @@ public class TouchHandler : MonoBehaviour
         {
             if (furnitureinfo.furnitureName == furnitureName.text)
             {
-                if (furnitureSelectUI.BookmarkCheck(furnitureinfo.hashKey))
+                if (furnitureSelectUI.BookmarkCheck(furnitureinfo.furnitureName))
                 {
                     Debug.Log("가구 북마크 진입");
                     bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
