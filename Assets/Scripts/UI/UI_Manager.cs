@@ -25,7 +25,7 @@ public class UI_Manager : MonoBehaviour
     EventSystem mEventSystem;
 
 
-    UI_FurnitureSelectUI furnitureSelectUI;
+    public UI_FurnitureSelectUI FurnitureSelectUI { get; private set; } = null;
 
 
     private void Start()
@@ -35,13 +35,13 @@ public class UI_Manager : MonoBehaviour
         mEventSystem = FindObjectOfType<EventSystem>();
         mGraphicRayCaster = FindObjectsOfType<GraphicRaycaster>();
 
-        furnitureSelectUI = FindObjectOfType<UI_FurnitureSelectUI>();
+        FurnitureSelectUI = FindObjectOfType<UI_FurnitureSelectUI>();
     }
 
 
     public void OpenFurnitureSelectUI()
     {
-        furnitureSelectUI?.ShowAllFurniture();
+        FurnitureSelectUI?.ShowAllFurniture();
     }
 
 

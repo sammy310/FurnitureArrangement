@@ -18,7 +18,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
 
     Data_Furniture furnitureInfos = null;
 
-    List<UI_FurnitureSelectItem> selectItemList = new List<UI_FurnitureSelectItem>();
+    Dictionary<Data_FurnitureInfo, UI_FurnitureSelectItem> selectItemDict = new Dictionary<Data_FurnitureInfo, UI_FurnitureSelectItem>();
     Dictionary<string, UI_FurnitureSelectItem> bookmarkItemDict = new Dictionary<string, UI_FurnitureSelectItem>();
     bool isBeforeStarting = true;
 
@@ -49,16 +49,22 @@ public class UI_FurnitureSelectUI : MonoBehaviour
             selectItem.SetInfoUI(furnitureInfoUI);
             selectItem.OnItemBookmarkAdd.AddListener(AddBookmark);
             selectItem.OnItemBookmarkRemove.AddListener(RemoveBookmark);
-            selectItemList.Add(selectItem);
+            selectItemDict.Add(info, selectItem);
 
             if (bookmarkData != null && bookmarkData.Remove(selectItem.FurnitureHashKey))
             {
                 selectItem.ToggleBookmark();
             }
         }
-        ResizeSelectUI(selectItemList.Count);
+        ResizeSelectUI(selectItemDict.Count);
     }
-    
+
+    public UI_FurnitureSelectItem GetFurnitureSelectItem(Data_FurnitureInfo info)
+    {
+        if (selectItemDict.ContainsKey(info)) return selectItemDict[info];
+        return null;
+    }
+
     // UI
 
     public void EnableUI(bool isEnable)
@@ -72,7 +78,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
         EnableUI(true);
         pageName.SetText(type.ToString());
         int typeCount = 0;
-        foreach (UI_FurnitureSelectItem item in selectItemList)
+        foreach (UI_FurnitureSelectItem item in selectItemDict.Values)
         {
             if(item.FurnitureInfo.furnitureType == type)
             {
@@ -91,18 +97,18 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     {
         EnableUI(true);
         
-        foreach (UI_FurnitureSelectItem item in selectItemList)
+        foreach (UI_FurnitureSelectItem item in selectItemDict.Values)
         {
             item.ShowItem();
         }
-        ResizeSelectUI(selectItemList.Count);
+        ResizeSelectUI(selectItemDict.Count);
     }
 
     public void ShowBookmarkedFurniture()
     {
         EnableUI(true);
         pageName.SetText("Your wishlist");
-        foreach (UI_FurnitureSelectItem item in selectItemList)
+        foreach (UI_FurnitureSelectItem item in selectItemDict.Values)
         {
             if (item.IsBookmarked)
             {
