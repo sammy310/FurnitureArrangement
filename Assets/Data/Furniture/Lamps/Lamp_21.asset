@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
   m_Name: Lamp_21
   m_EditorClassIdentifier: 
-  hashKey: 6406351228481044480
   furnitureName: Large Mood Lamp
   description: It's a large mood light. Brightness can be adjusted, and there is
     a reservation function.
-  bookMark: 0
   furnitureObject: {fileID: 1000012737298168, guid: 68ef50e2b3a60e5459b709ee481fbd72, type: 3}
   furnitureImage: {fileID: 21300000, guid: 052245b5bcf815c42b7037ae38fa6c11, type: 3}
-  furnitureSize: 
-  furnitureNum: 0
+  furnitureSize: 16000
+  furniturePrice: 0
   furnitureType: 1

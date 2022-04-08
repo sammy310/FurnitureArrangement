@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
   m_Name: BenchPres_1
   m_EditorClassIdentifier: 
-  hashKey: 6406351228481044480
   furnitureName: General Line BenchPress
   description: It's a sturdy bench press. It contains dumbbells that can control
     weight, and tilt can also be adjusted.
-  bookMark: 0
   furnitureObject: {fileID: 1000013717381910, guid: e741ee59b38c0af4c8eb3a6473a792ce, type: 3}
   furnitureImage: {fileID: 21300000, guid: c27f41bfe74a50d4286d3bf0c98cf5bd, type: 3}
   furnitureSize: 
-  furnitureNum: 0
+  furniturePrice: 107000
   furnitureType: 4

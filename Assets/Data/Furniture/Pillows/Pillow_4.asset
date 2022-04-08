@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
   m_Name: Pillow_4
   m_EditorClassIdentifier: 
-  hashKey: 6406351228481044480
   furnitureName: Stripe Pillow
   description: It is a square striped cushion. It is moderately hard and easy to
     use for design purposes.
-  bookMark: 0
   furnitureObject: {fileID: 1000012158640402, guid: fcd71a008d0230944815b551b7852a78, type: 3}
   furnitureImage: {fileID: 21300000, guid: 9b1e53c0243b4a74791f5b7203483a87, type: 3}
   furnitureSize: 
-  furnitureNum: 0
+  furniturePrice: 5400
   furnitureType: 0

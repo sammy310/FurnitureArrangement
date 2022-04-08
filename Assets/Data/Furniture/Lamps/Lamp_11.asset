@@ -12,13 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f015565f8e41d740b7c3eda7169a68d, type: 3}
   m_Name: Lamp_11
   m_EditorClassIdentifier: 
-  hashKey: 6406351228481044480
   furnitureName: Design Lamp
   description: It is a lamp with a design that won the 2021 New Designer Competition.
     Brightness can be adjusted.
-  bookMark: 0
   furnitureObject: {fileID: 1000010077216158, guid: dfa4fc34ebbd70d4e8d783ad52124d88, type: 3}
   furnitureImage: {fileID: 21300000, guid: 7693a55bc875e734e841cce2c05e6018, type: 3}
   furnitureSize: 
-  furnitureNum: 0
+  furniturePrice: 18000
   furnitureType: 1
