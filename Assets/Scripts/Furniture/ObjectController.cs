@@ -87,7 +87,7 @@ public abstract class ObjectController : MonoBehaviour
 
         objectTransform.position = Vector3.zero;
         objectTransform.localEulerAngles = Vector3.zero;
-        objectTransform.localScale = Vector3.one * 0.3f;
+        objectTransform.localScale = Vector3.one;
         //Reset();
         IsPlaced = false;
 

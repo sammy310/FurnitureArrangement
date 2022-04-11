@@ -5,6 +5,8 @@ using TMPro;
 
 public class SizeCube : MonoBehaviour
 {
+    SizeCubeManager sizeCubeManager = null;
+
     Camera cam;
 
     [SerializeField] Transform anchorTransform;
@@ -29,7 +31,12 @@ public class SizeCube : MonoBehaviour
         heightText = heightTextTransform.GetComponentInChildren<TextMeshPro>();
         depthText = depthTextTransform.GetComponentInChildren<TextMeshPro>();
     }
-    
+
+    public void SetSizeCubeManager(SizeCubeManager sizeCubeManager)
+    {
+        this.sizeCubeManager = sizeCubeManager;
+    }
+
     /*
      * height
      * |
@@ -44,9 +51,10 @@ public class SizeCube : MonoBehaviour
     {
         gameObject.SetActive(true);
 
+        transform.SetParent(sizeCubeManager.SizeCubeAnchor);
         transform.position = position;
         transform.rotation = rotation;
-
+        
         anchorTransform.localPosition = new Vector3(0, height / 2, 0);
 
         cubeTransform.localScale = new Vector3(width, height, depth);
@@ -54,9 +62,9 @@ public class SizeCube : MonoBehaviour
         heightTextTransform.localPosition = new Vector3(-width / 2, 0, -depth / 2);
         depthTextTransform.localPosition = new Vector3(width / 2, -height / 2, 0);
         
-        widthText.SetText(GetCentimeterStringFromMeter(width));
-        heightText.SetText(GetCentimeterStringFromMeter(height));
-        depthText.SetText(GetCentimeterStringFromMeter(depth));
+        widthText.SetText(GetMilimeterStringFromMeter(width));
+        heightText.SetText(GetMilimeterStringFromMeter(height));
+        depthText.SetText(GetMilimeterStringFromMeter(depth));
 
         if (textFacingCoroutine != null)
         {
@@ -64,6 +72,14 @@ public class SizeCube : MonoBehaviour
             textFacingCoroutine = null;
         }
         textFacingCoroutine = StartCoroutine(TextFacingToCamera());
+    }
+
+    public void SetSizeCube(Furniture furniture)
+    {
+        //furniture.furnitureInfo.furnitureSize
+        SetSizeCube(furniture.transform.position, furniture.transform.rotation, 1, 1, 1);
+
+        transform.SetParent(furniture.transform);
     }
 
     IEnumerator TextFacingToCamera()
@@ -76,6 +92,7 @@ public class SizeCube : MonoBehaviour
             yield return null;
         }
     }
+    
 
     public void DisableSizeCube()
     {
@@ -88,13 +105,18 @@ public class SizeCube : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public static float MeterToCM(float meter)
+    public static float MeterToMM(float meter)
     {
-        return meter * 100f;
+        return meter * 1000f;
     }
 
-    public string GetCentimeterStringFromMeter(float meter)
+    public static string GetMilimeterString(int mm)
     {
-        return string.Format("{0}{1}", (int)MeterToCM(meter), "cm");
+        return string.Format("{0}mm", mm);
+    }
+
+    public static string GetMilimeterStringFromMeter(float meter)
+    {
+        return GetMilimeterString((int)MeterToMM(meter));
     }
 }
