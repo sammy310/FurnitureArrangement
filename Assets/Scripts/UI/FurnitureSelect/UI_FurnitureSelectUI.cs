@@ -150,13 +150,8 @@ public class UI_FurnitureSelectUI : MonoBehaviour
         bool result = false;
         if (bookmarkItemDict.ContainsKey(hashkey))
         {
-            Debug.Log("가구 찾음");
             UI_FurnitureSelectItem clone = bookmarkItemDict[hashkey];
             result = clone.IsBookmarked;
-        }
-        else
-        {
-            Debug.Log("가구 못찾음");
         }
         return result;
     }

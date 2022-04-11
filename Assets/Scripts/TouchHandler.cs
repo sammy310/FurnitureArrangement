@@ -157,12 +157,10 @@ public class TouchHandler : MonoBehaviour
             {
                 if (furnitureSelectUI.BookmarkCheck(furnitureinfo.furnitureName))
                 {
-                    Debug.Log("가구 북마크 진입");
                     bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
                 }
                 else
                 {
-                    Debug.Log("가구 북마크 진입");
                     bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
                 }
             }
@@ -183,6 +181,18 @@ public class TouchHandler : MonoBehaviour
         trashButton.SetActive(true);
         bookmarkButton.SetActive(true);
         furnitureText.SetActive(true);
+    }
+
+    public void BookmarkButtonClick()
+    {
+        if (bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1])
+        {
+            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
+        }
+        else
+        {
+            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
+        }
     }
     public void CreateFloor(Vector3 targetPosition)
     {
