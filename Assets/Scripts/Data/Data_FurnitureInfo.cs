@@ -20,7 +20,9 @@ public class Data_FurnitureInfo : ScriptableObject
     
     public GameObject furnitureObject;
     public Sprite furnitureImage;
-    public string furnitureSize;
+    public double furnitureHeight;
+    public double furnitureLength;
+    public double furnitureWidth;
     public int furniturePrice;
 
     public FurnitureType furnitureType;
