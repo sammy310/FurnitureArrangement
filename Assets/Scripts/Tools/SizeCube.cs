@@ -76,8 +76,7 @@ public class SizeCube : MonoBehaviour
 
     public void SetSizeCube(Furniture furniture)
     {
-        //furniture.furnitureInfo.furnitureSize
-        SetSizeCube(furniture.transform.position, furniture.transform.rotation, 1, 1, 1);
+        SetSizeCube(furniture.transform.position, furniture.transform.rotation, furniture.furnitureInfo.furnitureWidth, furniture.furnitureInfo.furnitureHeight, furniture.furnitureInfo.furnitureDepth);
 
         transform.SetParent(furniture.transform);
     }
