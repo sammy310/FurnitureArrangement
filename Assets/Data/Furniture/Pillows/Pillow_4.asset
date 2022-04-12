@@ -17,6 +17,8 @@ MonoBehaviour:
     use for design purposes.
   furnitureObject: {fileID: 1000012158640402, guid: fcd71a008d0230944815b551b7852a78, type: 3}
   furnitureImage: {fileID: 21300000, guid: 9b1e53c0243b4a74791f5b7203483a87, type: 3}
-  furnitureSize: 
+  furnitureWidth: 20
+  furnitureHeight: 20
+  furnitureDepth: 15
   furniturePrice: 5400
   furnitureType: 0

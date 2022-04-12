@@ -17,6 +17,8 @@ MonoBehaviour:
     a band.
   furnitureObject: {fileID: 1000011411931536, guid: 65e4ed600c50fa242804884bf176f289, type: 3}
   furnitureImage: {fileID: 21300000, guid: 16cf7ecb9efd6704683aa0555e40f752, type: 3}
-  furnitureSize: 
+  furnitureWidth: 75
+  furnitureHeight: 200
+  furnitureDepth: 65
   furniturePrice: 282000
   furnitureType: 4

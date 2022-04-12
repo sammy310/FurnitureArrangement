@@ -17,6 +17,8 @@ MonoBehaviour:
     can be adjusted.
   furnitureObject: {fileID: 1000012854880012, guid: 729564fcfba74d3418bf3370afb8ddcc, type: 3}
   furnitureImage: {fileID: 21300000, guid: 6c3a967a297d54f4591421297f0718fa, type: 3}
-  furnitureSize: 
+  furnitureWidth: 17
+  furnitureHeight: 20
+  furnitureDepth: 17
   furniturePrice: 13000
   furnitureType: 1

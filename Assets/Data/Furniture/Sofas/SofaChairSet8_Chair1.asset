@@ -17,6 +17,8 @@ MonoBehaviour:
     a sofa and use it more widely.
   furnitureObject: {fileID: 1000011090733286, guid: c935dbf877013d34c835e3f130205486, type: 3}
   furnitureImage: {fileID: 21300000, guid: 8796f81386f592e4ead8c96758be4f7f, type: 3}
-  furnitureSize: 
+  furnitureWidth: 60
+  furnitureHeight: 35
+  furnitureDepth: 60
   furniturePrice: 87000
   furnitureType: 3

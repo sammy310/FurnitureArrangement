@@ -17,6 +17,8 @@ MonoBehaviour:
     a reservation function.
   furnitureObject: {fileID: 1000012737298168, guid: 68ef50e2b3a60e5459b709ee481fbd72, type: 3}
   furnitureImage: {fileID: 21300000, guid: 052245b5bcf815c42b7037ae38fa6c11, type: 3}
-  furnitureSize: 16000
+  furnitureWidth: 12
+  furnitureHeight: 35
+  furnitureDepth: 20
   furniturePrice: 0
   furnitureType: 1
