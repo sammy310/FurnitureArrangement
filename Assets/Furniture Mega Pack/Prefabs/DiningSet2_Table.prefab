@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 4000012842967778}
   m_Layer: 0
   m_Name: DiningSet2_Table
-  m_TagString: Furniture
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

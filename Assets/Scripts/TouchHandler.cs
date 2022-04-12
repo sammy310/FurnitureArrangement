@@ -18,12 +18,14 @@ public class TouchHandler : MonoBehaviour
     public GameObject furnitureText;
     public GameObject cameraButton;
     public GameObject resetButton;
+    public UI_FurnitureSelectUI furnitureSelectUI;
     public Data_Furniture furnitureDataInfo;
     public GameObject editButton;
+
     public GameObject floorPrefab;
     public GameObject mainUI;
     public TextMeshProUGUI furnitureName;
-    public Data_FurnitureInfo targetInfo;
+
     GameObject floorClone;
     Collider[] collider1;
     Collider[] collider2;
@@ -147,13 +149,13 @@ public class TouchHandler : MonoBehaviour
         mCachedAugmentationRotation = target.transform.localEulerAngles;
 
         mainUI.SetActive(false);
+
+        furnitureName.text = target.name.Replace("(Clone)","");
         foreach (var furnitureinfo in furnitureDataInfo.furnitureInfo)
         {
-            if (furnitureinfo.furnitureObject.name == target.name.Replace("(Clone)", ""))
+            if (furnitureinfo.furnitureName == furnitureName.text)
             {
-                targetInfo = furnitureinfo;
-                furnitureName.text = furnitureinfo.furnitureObject.name;
-                if (UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(furnitureinfo).IsBookmarked)
+                if (furnitureSelectUI.BookmarkCheck(furnitureinfo.furnitureName))
                 {
                     bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
                 }
@@ -183,7 +185,6 @@ public class TouchHandler : MonoBehaviour
 
     public void BookmarkButtonClick()
     {
-        UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(targetInfo).ToggleBookmark();
         if (bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1])
         {
             bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
