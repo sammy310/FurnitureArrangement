@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1881,12 +1881,12 @@ MonoBehaviour:
   furnitureText: {fileID: 2074717030}
   cameraButton: {fileID: 291951178}
   resetButton: {fileID: 356397488}
-  furnitureSelectUI: {fileID: 9016740939412645682}
   furnitureDataInfo: {fileID: 11400000, guid: c57354c01946a25478972f8fc1ad23b9, type: 2}
   editButton: {fileID: 131171070}
   floorPrefab: {fileID: 5389671154871872512, guid: e0d02421e1f34014a9000767f47b478b, type: 3}
   mainUI: {fileID: 1075170299}
   furnitureName: {fileID: 2074717032}
+  targetInfo: {fileID: 0}
 --- !u!114 &869482719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,9 +2766,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2078402090385810423}
-        m_TargetAssemblyTypeName: UI_FurnitureInfoUI, Assembly-CSharp
-        m_MethodName: ToggleBookmark
+      - m_Target: {fileID: 869482718}
+        m_TargetAssemblyTypeName: TouchHandler, Assembly-CSharp
+        m_MethodName: BookmarkButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
