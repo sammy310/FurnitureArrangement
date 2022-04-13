@@ -21,7 +21,7 @@ public class TouchHandler : MonoBehaviour
     public UI_FurnitureSelectUI furnitureSelectUI;
     public Data_Furniture furnitureDataInfo;
     public GameObject editButton;
-
+    private Data_FurnitureInfo targetInfo;
     public GameObject floorPrefab;
     public GameObject mainUI;
     public TextMeshProUGUI furnitureName;
@@ -58,11 +58,12 @@ public class TouchHandler : MonoBehaviour
         switch(touchMode)
         {
             case Mode.SelectMode:
-                if (Input.GetMouseButtonDown(0)) {
+                if (Input.touchCount == 1) {
                     if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
                     {
                         SelectObject(ref target);
                     }
+
                 }
                 break;
 
@@ -77,17 +78,20 @@ public class TouchHandler : MonoBehaviour
     {
         if (Input.touchCount == 2)
         {
-            GetTouchAngleAndDistance(Input.GetTouch(0), Input.GetTouch(1), out var currentTouchAngle);
-
-            if (mIsFirstFrameWithTwoTouches)
+            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(1).fingerId) == false)
             {
-                mCachedTouchAngle = currentTouchAngle;
-                mIsFirstFrameWithTwoTouches = false;
+                GetTouchAngleAndDistance(Input.GetTouch(0), Input.GetTouch(1), out var currentTouchAngle);
+
+                if (mIsFirstFrameWithTwoTouches)
+                {
+                    mCachedTouchAngle = currentTouchAngle;
+                    mIsFirstFrameWithTwoTouches = false;
+                }
+
+                var angleDelta = currentTouchAngle - mCachedTouchAngle;
+
+                target.transform.localEulerAngles = mCachedAugmentationRotation - new Vector3(0, angleDelta * 3f, 0);
             }
-
-            var angleDelta = currentTouchAngle - mCachedTouchAngle;
-
-            target.transform.localEulerAngles = mCachedAugmentationRotation - new Vector3(0, angleDelta * 3f, 0);
         }
         else if (Input.touchCount == 1)
         {
@@ -145,17 +149,19 @@ public class TouchHandler : MonoBehaviour
 
     public void EditButtonClick()
     {
+        UItouched = true;
         touchMode = Mode.EditMode;
         mCachedAugmentationRotation = target.transform.localEulerAngles;
 
         mainUI.SetActive(false);
 
-        furnitureName.text = target.name.Replace("(Clone)","");
         foreach (var furnitureinfo in furnitureDataInfo.furnitureInfo)
         {
-            if (furnitureinfo.furnitureName == furnitureName.text)
+            if (furnitureinfo.furnitureObject.name == target.name.Replace("(Clone)", ""))
             {
-                if (furnitureSelectUI.BookmarkCheck(furnitureinfo.furnitureName))
+                targetInfo = furnitureinfo;
+                furnitureName.text = furnitureinfo.furnitureName;
+                if (UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(furnitureinfo).IsBookmarked)
                 {
                     bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
                 }
@@ -185,13 +191,15 @@ public class TouchHandler : MonoBehaviour
 
     public void BookmarkButtonClick()
     {
-        if (bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1])
+        UItouched = true;
+        UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(targetInfo).ToggleBookmark();
+        if (UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(targetInfo).IsBookmarked)
         {
-            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
+            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
         }
         else
         {
-            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
+            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
         }
     }
     public void CreateFloor(Vector3 targetPosition)
@@ -201,6 +209,7 @@ public class TouchHandler : MonoBehaviour
 
     public void EditEndButtonClick()
     {
+        UItouched = true;
         touchMode = Mode.SelectMode;
         Collider[] collider1 = target.GetComponents<Collider>();
         Collider[] collider2 = target.GetComponentsInChildren<Collider>();

@@ -145,14 +145,4 @@ public class UI_FurnitureSelectUI : MonoBehaviour
             SaveManager.SaveBookmarkData(bookmarkItemDict);
     }
 
-    public bool BookmarkCheck(string hashkey)
-    {
-        bool result = false;
-        if (bookmarkItemDict.ContainsKey(hashkey))
-        {
-            UI_FurnitureSelectItem clone = bookmarkItemDict[hashkey];
-            result = clone.IsBookmarked;
-        }
-        return result;
-    }
 }
