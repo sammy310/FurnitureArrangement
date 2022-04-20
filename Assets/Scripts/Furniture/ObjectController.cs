@@ -8,9 +8,7 @@ public abstract class ObjectController : MonoBehaviour
 {
     AnchorBehaviour anchor;
     public AnchorBehaviour anchorBehaviour => anchor;
-
-    //MeshRenderer[] meshRenderer;
-
+    
     Transform objectTransform = null;
     Renderer[] renderers = null;
 
@@ -19,20 +17,7 @@ public abstract class ObjectController : MonoBehaviour
     protected virtual void Awake()
     {
         anchor = GetComponentInParent<AnchorBehaviour>();
-        //meshRenderer = GetComponentsInChildren<MeshRenderer>();
     }
-
-    //protected virtual void Start()
-    //{
-    //    EnableRendererColliderCanvas(gameObject, false);
-    //    DetachProductFromAnchor();
-    //}
-
-
-    //private void Update()
-    //{
-    //    EnableRendererColliderCanvas(gameObject, true);
-    //}
 
     private void LateUpdate()
     {
@@ -49,12 +34,7 @@ public abstract class ObjectController : MonoBehaviour
             Destroy(objectTransform.gameObject);
         }
     }
-
-    //public void SetPlaced(bool isPlaced)
-    //{
-    //    IsPlaced = isPlaced;
-    //}
-
+    
     public void SetNewPosition(Vector3 newPosition)
     {
         if (objectTransform == null) return;
@@ -88,13 +68,8 @@ public abstract class ObjectController : MonoBehaviour
         objectTransform.position = Vector3.zero;
         objectTransform.localEulerAngles = Vector3.zero;
         objectTransform.localScale = Vector3.one;
-        //Reset();
-        IsPlaced = false;
 
-        //foreach (var mesh in meshRenderer)
-        //{
-        //    mesh.enabled = true;
-        //}
+        IsPlaced = false;
     }
 
     void EnableRenderer()
