@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
-
+using UnityEngine.EventSystems;
 public class PlaneManager : MonoBehaviour
 {
     public static PlaneManager Instance { get; private set; } = null;
@@ -72,7 +72,6 @@ public class PlaneManager : MonoBehaviour
         if (!CurrentFurniture.IsPlaced)
         {
             if (UI_Manager.Instance.IsPointerOverUI()) return;
-
             Debug.Log("HandleInteractiveHitTest() called.");
 
             mContentPositioningBehaviour.DuplicateStage = false;
