@@ -63,7 +63,6 @@ public class TouchHandler : MonoBehaviour
                     {
                         SelectObject(ref target);
                     }
-
                 }
                 break;
 
@@ -130,13 +129,19 @@ public class TouchHandler : MonoBehaviour
         Ray touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(touchRay, out hit))
         {
-            if (target != null && target.tag == "Furniture" && target.gameObject != hit.collider.gameObject)
+            GameObject rayObject = null;
+            rayObject = hit.collider.gameObject;
+            while (rayObject.tag != "Furniture")
+            {
+                rayObject = rayObject.transform.parent.gameObject;
+            }
+            if (target != null && target.tag == "Furniture" && target.gameObject != rayObject.gameObject)
             {
                 target = null;
             }
-            if (hit.collider.tag == "Furniture")
+            if (rayObject.tag == "Furniture")
             {
-                target = hit.collider.gameObject;
+                target = rayObject.gameObject;
                 editButton.SetActive(true);
             }
         }
