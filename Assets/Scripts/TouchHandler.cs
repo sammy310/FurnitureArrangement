@@ -137,16 +137,22 @@ public class TouchHandler : MonoBehaviour
             }
             if (target != null && target.tag == "Furniture" && target.gameObject != rayObject.gameObject)
             {
+                target.GetComponent<Outline>().OutlineWidth = 0.0f;
                 target = null;
             }
             if (rayObject.tag == "Furniture")
             {
                 target = rayObject.gameObject;
+                target.GetComponent<Outline>().OutlineWidth = 2.0f;
                 editButton.SetActive(true);
             }
         }
         else
         {
+            if (target)
+            {
+                target.GetComponent<Outline>().OutlineWidth = 0.0f;
+            }
             editButton.SetActive(false);
             target = null;
         }
@@ -226,6 +232,7 @@ public class TouchHandler : MonoBehaviour
         {
             collider2[i].enabled = true;
         }
+        target.GetComponent<Outline>().OutlineWidth = 0.0f;
         target = null;
         Destroy(floorClone);
         mainUI.SetActive(true);

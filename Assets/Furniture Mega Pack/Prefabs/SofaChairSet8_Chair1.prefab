@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000011744330856}
   - component: {fileID: 23000013621359960}
   - component: {fileID: 65000011171632802}
+  - component: {fileID: -2867295911842977852}
   m_Layer: 0
   m_Name: SofaChairSet8_Chair1
   m_TagString: Furniture
@@ -95,3 +96,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0146072, y: 0.331164, z: 0.9742207}
   m_Center: {x: 0, y: 0.165582, z: -0.0000020563602}
+--- !u!114 &-2867295911842977852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011090733286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
