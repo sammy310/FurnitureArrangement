@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4228,6 +4228,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FurnitureUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6596300874868478270, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596300874868478270, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7391594687284149390, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4251,6 +4259,14 @@ PrefabInstance:
     - target: {fileID: 7391594687284149390, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543353787175314160, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_Spacing.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543353787175314160, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_CellSize.x
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
