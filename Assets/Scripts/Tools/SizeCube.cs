@@ -47,15 +47,15 @@ public class SizeCube : MonoBehaviour
      * -------------
      *         width
      */
-    public void SetSizeCube(Vector3 position, Quaternion rotation, float width, float height, float depth)
+    public void SetSizeCube(Transform anchor, Vector3 position, Quaternion rotation, float width, float height, float depth)
     {
         gameObject.SetActive(true);
 
-        transform.SetParent(sizeCubeManager.SizeCubeAnchor);
-        transform.position = position;
-        transform.rotation = rotation;
-        
-        anchorTransform.localPosition = new Vector3(0, height / 2, 0);
+        transform.SetParent(anchor);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = rotation;
+
+        anchorTransform.localPosition = position;
 
         cubeTransform.localScale = new Vector3(width, height, depth);
         widthTextTransform.localPosition = new Vector3(0, -height / 2, -depth / 2);
@@ -74,11 +74,14 @@ public class SizeCube : MonoBehaviour
         textFacingCoroutine = StartCoroutine(TextFacingToCamera());
     }
 
-    public void SetSizeCube(Furniture furniture)
+    public void SetSizeCube(Transform anchor, Vector3 position, Vector3 size)
     {
-        SetSizeCube(furniture.transform.position, furniture.transform.rotation, furniture.FurnitureInfo.furnitureWidth, furniture.FurnitureInfo.furnitureHeight, furniture.FurnitureInfo.furnitureDepth);
+        SetSizeCube(anchor, position, Quaternion.identity, size.x, size.y, size.z);
+    }
 
-        transform.SetParent(furniture.transform);
+    public void SetSizeCube(Vector3 position, Quaternion rotation, float width, float height, float depth)
+    {
+        SetSizeCube(sizeCubeManager.SizeCubeAnchor, position, rotation, width, height, depth);
     }
 
     IEnumerator TextFacingToCamera()
@@ -104,18 +107,23 @@ public class SizeCube : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public static float MeterToMM(float meter)
+    public static float MeterToMilimeter(float meter)
     {
         return meter * 1000f;
     }
 
-    public static string GetMilimeterString(int mm)
+    public static float MilimeterToMeter(float milimeter)
     {
-        return string.Format("{0}mm", mm);
+        return milimeter / 1000f;
+    }
+
+    public static string GetMilimeterString(int milimeter)
+    {
+        return string.Format("{0}mm", milimeter);
     }
 
     public static string GetMilimeterStringFromMeter(float meter)
     {
-        return GetMilimeterString((int)MeterToMM(meter));
+        return GetMilimeterString((int)MeterToMilimeter(meter));
     }
 }

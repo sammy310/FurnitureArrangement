@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012767626908}
   - component: {fileID: -2951512634843802428}
+  - component: {fileID: 8464341405060677264}
   m_Layer: 0
   m_Name: DeckChair
   m_TagString: Furniture
@@ -74,6 +75,7 @@ Transform:
   m_Children:
   - {fileID: 4000013295447482}
   - {fileID: 4000014002076720}
+  - {fileID: 3155821924476197410}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95,6 +97,18 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &8464341405060677264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011388997758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640eb30e22970394993cad60789a9d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000012276123874
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,3 +286,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.50773925, y: 0.020978391, z: 0.45041895}
   m_Center: {x: 0.0131073, y: 0.4905127, z: 0.055170417}
+--- !u!1 &5438653090859557689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3155821924476197410}
+  - component: {fileID: 7667111674819715436}
+  - component: {fileID: 4649410068937842154}
+  m_Layer: 0
+  m_Name: SizeMeasureBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3155821924476197410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438653090859557689}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000012767626908}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7667111674819715436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438653090859557689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 1, z: 0.66}
+  m_Center: {x: 0.013, y: 0.48, z: 0}
+--- !u!114 &4649410068937842154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438653090859557689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b2f393e9ba83f4996ac03fa304360e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

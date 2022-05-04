@@ -9,7 +9,10 @@ public abstract class ObjectController : MonoBehaviour
     AnchorBehaviour anchor;
     public AnchorBehaviour anchorBehaviour => anchor;
     
-    Transform objectTransform = null;
+    public Transform ObjectTransform { get; private set; } = null;
+
+    public ObjectMesh MeshObject { get; private set; } = null;
+
     Renderer[] renderers = null;
 
     public bool IsPlaced { get; private set; } = false;
@@ -29,45 +32,63 @@ public abstract class ObjectController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (objectTransform != null && objectTransform.parent != transform)
+        if (ObjectTransform != null && ObjectTransform.parent != transform)
         {
-            Destroy(objectTransform.gameObject);
+            Destroy(ObjectTransform.gameObject);
         }
     }
     
     public void SetNewPosition(Vector3 newPosition)
     {
-        if (objectTransform == null) return;
+        if (ObjectTransform == null) return;
 
-        objectTransform.position = newPosition;
+        ObjectTransform.position = newPosition;
     }
 
     protected void SetObject(GameObject newObject)
     {
-        objectTransform = newObject.transform;
-        renderers = objectTransform.GetComponentsInChildren<Renderer>();
+        ObjectTransform = newObject.transform;
+
+        MeshObject = ObjectTransform.GetComponent<ObjectMesh>();
+        if (MeshObject == null)
+        {
+            Debug.LogError("ObjectMesh cannot found!!");
+        }
+        else
+        {
+            MeshObject.SetController(this);
+        }
+
+        renderers = ObjectTransform.GetComponentsInChildren<Renderer>();
         DetachObjectFromAnchor();
+
+        OnSetObject(newObject);
+    }
+
+    protected virtual void OnSetObject(GameObject newObject)
+    {
+
     }
 
     public void PlaceObjectAtAnchor()
     {
-        if (objectTransform == null) return;
+        if (ObjectTransform == null) return;
 
-        objectTransform.SetParent(anchor.transform, true);
-        objectTransform.localPosition = Vector3.zero;
+        ObjectTransform.SetParent(anchor.transform, true);
+        ObjectTransform.localPosition = Vector3.zero;
         
         IsPlaced = true;
     }
 
     public void DetachObjectFromAnchor()
     {
-        if (objectTransform == null) return;
+        if (ObjectTransform == null) return;
 
-        objectTransform.SetParent(null);
+        ObjectTransform.SetParent(null);
 
-        objectTransform.position = Vector3.zero;
-        objectTransform.localEulerAngles = Vector3.zero;
-        objectTransform.localScale = Vector3.one;
+        ObjectTransform.position = Vector3.zero;
+        ObjectTransform.localEulerAngles = Vector3.zero;
+        ObjectTransform.localScale = Vector3.one;
 
         IsPlaced = false;
     }
