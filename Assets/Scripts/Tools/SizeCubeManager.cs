@@ -66,12 +66,14 @@ public class SizeCubeManager : MonoBehaviour
 
     public bool CreateSizeCubeFromCurrentFurniture()
     {
-        Furniture furniture = FurnitureManager.Instance.CurrentFurniture;
-        if (furniture == null) return false;
+        if (!FurnitureManager.Instance.IsFurnitureExists) return false;
 
         CheckSizeCube();
 
-        sizeCube.SetSizeCube(furniture);
+        Furniture furniture = FurnitureManager.Instance.CurrentFurniture;
+        if (furniture.SizeMeasure == null) return false;
+
+        sizeCube.SetSizeCube(furniture.ObjectTransform, furniture.SizeMeasure.GetCenter(), furniture.SizeMeasure.GetSize());
 
         return true;
     }

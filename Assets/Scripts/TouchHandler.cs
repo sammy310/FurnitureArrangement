@@ -11,6 +11,8 @@ public class TouchHandler : MonoBehaviour
     Mode touchMode;
 
     GameObject target;
+    ObjectMesh targetMesh;
+
     public Sprite[] bookmarkSprite;
     public GameObject editEndButton;
     public GameObject trashButton;
@@ -36,6 +38,8 @@ public class TouchHandler : MonoBehaviour
 
     bool UItouched;
 
+    int floorLayer = 0;
+
     public enum Mode
     {
         ReadyMode,
@@ -47,6 +51,8 @@ public class TouchHandler : MonoBehaviour
         touchMode = Mode.SelectMode;
         target = null;
         UItouched = false;
+
+        floorLayer = 1 << LayerMask.NameToLayer("Floor");
     }
     public void SetTouchMode(Mode i)
     {
@@ -98,7 +104,7 @@ public class TouchHandler : MonoBehaviour
             {
 
                 Ray touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(touchRay, out var cameraToPlaneHit) && cameraToPlaneHit.collider.gameObject.tag == "Floor")
+                if (Physics.Raycast(touchRay, out var cameraToPlaneHit, 1000f, floorLayer) && cameraToPlaneHit.collider.gameObject.tag == "Floor")
                 {
                     target.transform.position = cameraToPlaneHit.point;
                 }
@@ -137,13 +143,19 @@ public class TouchHandler : MonoBehaviour
             }
             if (target != null && target.tag == "Furniture" && target.gameObject != rayObject.gameObject)
             {
-                target.GetComponent<Outline>().OutlineWidth = 0.0f;
+                Outline outline = target.GetComponent<Outline>();
+                if (outline != null)
+                    outline.OutlineWidth = 0.0f;
                 target = null;
+                targetMesh = null;
             }
             if (rayObject.tag == "Furniture")
             {
                 target = rayObject.gameObject;
-                target.GetComponent<Outline>().OutlineWidth = 2.0f;
+                targetMesh = target.GetComponent<ObjectMesh>();
+                Outline outline = target.GetComponent<Outline>();
+                if (outline != null)
+                    outline.OutlineWidth = 2.0f;
                 editButton.SetActive(true);
             }
         }
@@ -151,10 +163,13 @@ public class TouchHandler : MonoBehaviour
         {
             if (target)
             {
-                target.GetComponent<Outline>().OutlineWidth = 0.0f;
+                Outline outline = target.GetComponent<Outline>();
+                if (outline != null)
+                    outline.OutlineWidth = 0.0f;
             }
             editButton.SetActive(false);
             target = null;
+            targetMesh = null;
         }
     }
 
@@ -198,6 +213,9 @@ public class TouchHandler : MonoBehaviour
         trashButton.SetActive(true);
         bookmarkButton.SetActive(true);
         furnitureText.SetActive(true);
+
+        if (targetMesh != null)
+            FurnitureManager.Instance.SetFurniture(targetMesh.Controller as Furniture);
     }
 
     public void BookmarkButtonClick()
@@ -232,7 +250,9 @@ public class TouchHandler : MonoBehaviour
         {
             collider2[i].enabled = true;
         }
-        target.GetComponent<Outline>().OutlineWidth = 0.0f;
+        Outline outline = target.GetComponent<Outline>();
+        if (outline != null)
+            outline.OutlineWidth = 0.0f;
         target = null;
         Destroy(floorClone);
         mainUI.SetActive(true);
@@ -240,7 +260,10 @@ public class TouchHandler : MonoBehaviour
         bookmarkButton.SetActive(false);
         furnitureText.SetActive(false);
         editEndButton.SetActive(false);
+
+        FurnitureManager.Instance.DisableFurniture();
     }
+
     public void TrashButtonClick()
     {
         Destroy(target.gameObject);

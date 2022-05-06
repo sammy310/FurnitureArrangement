@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 83762491}
   - component: {fileID: 83762493}
   - component: {fileID: 83762492}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Check2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,12 +884,12 @@ MonoBehaviour:
   furnitureText: {fileID: 717762880}
   cameraButton: {fileID: 1573443987}
   resetButton: {fileID: 1204177389}
-  furnitureSelectUI: {fileID: 1162840219}
   furnitureDataInfo: {fileID: 11400000, guid: c57354c01946a25478972f8fc1ad23b9, type: 2}
   editButton: {fileID: 864291094}
   floorPrefab: {fileID: 5389671154871872512, guid: e0d02421e1f34014a9000767f47b478b, type: 3}
   mainUI: {fileID: 1469178872}
   furnitureName: {fileID: 717762881}
+  targetInfo: {fileID: 0}
 --- !u!114 &267065367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 717762882}
   - component: {fileID: 717762883}
   - component: {fileID: 717762881}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Furniture Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1494,7 @@ GameObject:
   - component: {fileID: 861974579}
   - component: {fileID: 861974578}
   - component: {fileID: 861974577}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Edit End Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,7 +1627,7 @@ GameObject:
   - component: {fileID: 864291098}
   - component: {fileID: 864291097}
   - component: {fileID: 864291096}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Edit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1925,7 +1925,7 @@ GameObject:
   - component: {fileID: 974311540}
   - component: {fileID: 974311539}
   - component: {fileID: 974311538}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EditUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2667,7 +2667,7 @@ GameObject:
   - component: {fileID: 1382616822}
   - component: {fileID: 1382616821}
   - component: {fileID: 1382616820}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2799,7 +2799,7 @@ GameObject:
   - component: {fileID: 1452308712}
   - component: {fileID: 1452308714}
   - component: {fileID: 1452308713}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3639,7 +3639,7 @@ GameObject:
   - component: {fileID: 1919020109}
   - component: {fileID: 1919020111}
   - component: {fileID: 1919020110}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

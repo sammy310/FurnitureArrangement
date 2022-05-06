@@ -96,6 +96,7 @@ public class PlaneManager : MonoBehaviour
             //}
 
             CurrentFurniture.PlaceObjectAtAnchor();
+            FurnitureManager.Instance.DisableFurniture();
 
             GameObject[] furnitureWorld = GameObject.FindGameObjectsWithTag("Furniture");
             if (furnitureWorld.Length > 0)

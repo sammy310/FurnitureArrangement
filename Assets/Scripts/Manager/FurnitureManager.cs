@@ -47,9 +47,15 @@ public class FurnitureManager : MonoBehaviour
     {
         return furnitures?.Count ?? 0;
     }
+
     public void SetFurniture(Furniture furniture)
     {
         CurrentFurniture = furniture;
+    }
+
+    public void DisableFurniture()
+    {
+        CurrentFurniture = null;
     }
 
     public void ResetFurniture()

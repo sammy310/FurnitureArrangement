@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 23000011156404346}
   - component: {fileID: 65000012092430714}
   - component: {fileID: 99507815236314100}
+  - component: {fileID: 2990835118860506993}
+  - component: {fileID: 9043727704886662127}
   m_Layer: 0
   m_Name: Pillow_46
   m_TagString: Furniture
@@ -94,7 +96,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.27874488, y: 0.2775238, z: 1.578829}
+  m_Size: {x: 0.3, y: 0.3, z: 1.6}
   m_Center: {x: 0, y: 0.13899027, z: 0}
 --- !u!114 &99507815236314100
 MonoBehaviour:
@@ -114,3 +116,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &2990835118860506993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011249693040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640eb30e22970394993cad60789a9d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9043727704886662127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011249693040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b2f393e9ba83f4996ac03fa304360e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

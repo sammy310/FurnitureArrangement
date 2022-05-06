@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012072654580}
   - component: {fileID: 8592264548607523906}
+  - component: {fileID: 5219680492156552142}
   m_Layer: 0
   m_Name: Pull_Up
   m_TagString: Furniture
@@ -51,6 +52,18 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &5219680492156552142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011411931536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640eb30e22970394993cad60789a9d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000012567815500
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +157,7 @@ GameObject:
   - component: {fileID: 33000013499650594}
   - component: {fileID: 23000011505409232}
   - component: {fileID: 65000012359503160}
+  - component: {fileID: 2312444392063596165}
   m_Layer: 0
   m_Name: Pull_Up 1
   m_TagString: Untagged
@@ -225,5 +239,17 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1248535, y: 2.3390477, z: 1.4087503}
-  m_Center: {x: 0.025975347, y: 1.1692752, z: 0}
+  m_Size: {x: 1.22, y: 2.4, z: 1.45}
+  m_Center: {x: 0.01, y: 1.1692752, z: 0}
+--- !u!114 &2312444392063596165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012746216696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b2f393e9ba83f4996ac03fa304360e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
