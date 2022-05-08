@@ -65,9 +65,13 @@ public class TouchHandler : MonoBehaviour
         {
             case Mode.SelectMode:
                 if (Input.touchCount == 1) {
+                    Touch touch = Input.GetTouch(0);
                     if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
                     {
-                        SelectObject(ref target);
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            SelectObject(ref target);
+                        }
                     }
                 }
                 break;
@@ -156,7 +160,47 @@ public class TouchHandler : MonoBehaviour
                 Outline outline = target.GetComponent<Outline>();
                 if (outline != null)
                     outline.OutlineWidth = 2.0f;
-                editButton.SetActive(true);
+                UItouched = true;
+                touchMode = Mode.EditMode;
+                mCachedAugmentationRotation = target.transform.localEulerAngles;
+
+                mainUI.SetActive(false);
+
+                foreach (var furnitureinfo in furnitureDataInfo.furnitureInfo)
+                {
+                    if (furnitureinfo.furnitureObject.name == target.name.Replace("(Clone)", ""))
+                    {
+                        targetInfo = furnitureinfo;
+                        furnitureName.text = furnitureinfo.furnitureName;
+                        if (UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(furnitureinfo).IsBookmarked)
+                        {
+                            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
+                        }
+                        else
+                        {
+                            bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
+                        }
+                    }
+                }
+                Collider[] collider1 = target.GetComponents<Collider>();
+                Collider[] collider2 = target.GetComponentsInChildren<Collider>();
+                for (int i = 0; i < collider1.Length; i++)
+                {
+                    collider1[i].enabled = false;
+                }
+                for (int i = 0; i < collider2.Length; i++)
+                {
+                    collider2[i].enabled = false;
+                }
+                CreateFloor(target.transform.position);
+                editButton.SetActive(false);
+                editEndButton.SetActive(true);
+                trashButton.SetActive(true);
+                bookmarkButton.SetActive(true);
+                furnitureText.SetActive(true);
+
+                if (targetMesh != null)
+                    FurnitureManager.Instance.SetFurniture(targetMesh.Controller as Furniture);
             }
         }
         else
@@ -173,50 +217,50 @@ public class TouchHandler : MonoBehaviour
         }
     }
 
-    public void EditButtonClick()
-    {
-        UItouched = true;
-        touchMode = Mode.EditMode;
-        mCachedAugmentationRotation = target.transform.localEulerAngles;
+    //public void EditButtonClick()
+    //{
+    //    UItouched = true;
+    //    touchMode = Mode.EditMode;
+    //    mCachedAugmentationRotation = target.transform.localEulerAngles;
 
-        mainUI.SetActive(false);
+    //    mainUI.SetActive(false);
 
-        foreach (var furnitureinfo in furnitureDataInfo.furnitureInfo)
-        {
-            if (furnitureinfo.furnitureObject.name == target.name.Replace("(Clone)", ""))
-            {
-                targetInfo = furnitureinfo;
-                furnitureName.text = furnitureinfo.furnitureName;
-                if (UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(furnitureinfo).IsBookmarked)
-                {
-                    bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
-                }
-                else
-                {
-                    bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
-                }
-            }
-        }
-        Collider[] collider1 = target.GetComponents<Collider>();
-        Collider[] collider2 = target.GetComponentsInChildren<Collider>();
-        for (int i =0; i< collider1.Length;i++)
-        {
-            collider1[i].enabled = false;
-        }
-        for (int i = 0; i < collider2.Length; i++)
-        {
-            collider2[i].enabled = false;
-        }
-        CreateFloor(target.transform.position);
-        editButton.SetActive(false);
-        editEndButton.SetActive(true);
-        trashButton.SetActive(true);
-        bookmarkButton.SetActive(true);
-        furnitureText.SetActive(true);
+    //    foreach (var furnitureinfo in furnitureDataInfo.furnitureInfo)
+    //    {
+    //        if (furnitureinfo.furnitureObject.name == target.name.Replace("(Clone)", ""))
+    //        {
+    //            targetInfo = furnitureinfo;
+    //            furnitureName.text = furnitureinfo.furnitureName;
+    //            if (UI_Manager.Instance.FurnitureSelectUI.GetFurnitureSelectItem(furnitureinfo).IsBookmarked)
+    //            {
+    //                bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[1];
+    //            }
+    //            else
+    //            {
+    //                bookmarkButton.GetComponent<Image>().sprite = bookmarkSprite[0];
+    //            }
+    //        }
+    //    }
+    //    Collider[] collider1 = target.GetComponents<Collider>();
+    //    Collider[] collider2 = target.GetComponentsInChildren<Collider>();
+    //    for (int i =0; i< collider1.Length;i++)
+    //    {
+    //        collider1[i].enabled = false;
+    //    }
+    //    for (int i = 0; i < collider2.Length; i++)
+    //    {
+    //        collider2[i].enabled = false;
+    //    }
+    //    CreateFloor(target.transform.position);
+    //    editButton.SetActive(false);
+    //    editEndButton.SetActive(true);
+    //    trashButton.SetActive(true);
+    //    bookmarkButton.SetActive(true);
+    //    furnitureText.SetActive(true);
 
-        if (targetMesh != null)
-            FurnitureManager.Instance.SetFurniture(targetMesh.Controller as Furniture);
-    }
+    //    if (targetMesh != null)
+    //        FurnitureManager.Instance.SetFurniture(targetMesh.Controller as Furniture);
+    //}
 
     public void BookmarkButtonClick()
     {
