@@ -337,4 +337,9 @@ public class TouchHandler : MonoBehaviour
         }
         EditEndButtonClick();
     }
+
+    public void SetUITouched()
+    {
+        UItouched = true;
+    }
 }

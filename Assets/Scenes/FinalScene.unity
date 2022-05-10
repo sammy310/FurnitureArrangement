@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 575232924}
   - component: {fileID: 575232923}
   - component: {fileID: 575232922}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SizeMeasureBtnUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6493,6 +6493,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8455893568863418839}
         m_TargetAssemblyTypeName: UI_SizeMeasureUI, Assembly-CSharp
         m_MethodName: EnableUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 869482718}
+        m_TargetAssemblyTypeName: TouchHandler, Assembly-CSharp
+        m_MethodName: SetUITouched
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
