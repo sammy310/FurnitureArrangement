@@ -26,6 +26,12 @@ public class UI_SizeMeasureUI : MonoBehaviour
     
     public void EnableUI()
     {
+        if (sizeCubeManager.IsSizeCubeActive)
+        {
+            sizeCubeManager.DisableSizeCube();
+            return;
+        }
+
         if (sizeCubeManager.CreateSizeCubeFromCurrentFurniture())
         {
             DisableUI();

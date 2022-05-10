@@ -23,6 +23,8 @@ public class SizeCube : MonoBehaviour
 
     Coroutine textFacingCoroutine = null;
 
+    public bool IsActive => gameObject.activeSelf;
+
     private void Awake()
     {
         cam = Camera.main;

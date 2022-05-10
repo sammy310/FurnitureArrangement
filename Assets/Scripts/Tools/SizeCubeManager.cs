@@ -8,6 +8,7 @@ public class SizeCubeManager : MonoBehaviour
 
     public Transform SizeCubeAnchor { get; private set; } = null;
     SizeCube sizeCube = null;
+    public bool IsSizeCubeActive => sizeCube != null && sizeCube.IsActive;
 
     private void Awake()
     {
