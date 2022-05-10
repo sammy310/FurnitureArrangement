@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2541,7 +2541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 350f41a1292fc014b88555f7a331d33d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd1ec4ab12e244e19ac4c4384afe15ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3534,7 +3534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 137ef5245964046768b94943bca86c01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cb13943ebc8d47ada4b4495b03beb4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6435,7 +6435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d9557b54becb948f1b68e7b73ee8b1f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5c3cace78c2b4319a9a003ac8bd7674, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8061,7 +8061,7 @@ PrefabInstance:
     - target: {fileID: 4883680584713579673, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6c386be0276ee4172aa069cfbe64e050, type: 3}
+      objectReference: {fileID: 21300000, guid: 137ef5245964046768b94943bca86c01, type: 3}
     - target: {fileID: 6288734863890317187, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -8181,7 +8181,7 @@ PrefabInstance:
     - target: {fileID: 6596300874857085873, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 137ef5245964046768b94943bca86c01, type: 3}
+      objectReference: {fileID: 21300000, guid: 1cb13943ebc8d47ada4b4495b03beb4d, type: 3}
     - target: {fileID: 6596300874868478270, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_SizeDelta.x
       value: -60
