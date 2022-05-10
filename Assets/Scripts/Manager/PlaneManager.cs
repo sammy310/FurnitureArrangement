@@ -21,7 +21,7 @@ public class PlaneManager : MonoBehaviour
 
     public GameObject cameraButton;
     public GameObject resetButton;
-    
+    public TouchHandler touchHandler;
     
     public Furniture CurrentFurniture => FurnitureManager.Instance.CurrentFurniture;
     
@@ -49,6 +49,7 @@ public class PlaneManager : MonoBehaviour
         //Debug.Log("Auto - IsPlaced : " + CurrentFurniture.IsPlaced);
         if (!CurrentFurniture.IsPlaced)
         {
+            StartCoroutine(touchHandler.SetWaitMode());
             CurrentFurniture.DetachObjectFromAnchor();
             CurrentFurniture.SetNewPosition(result.Position);
             //string s = "";
@@ -97,7 +98,7 @@ public class PlaneManager : MonoBehaviour
 
             CurrentFurniture.PlaceObjectAtAnchor();
             FurnitureManager.Instance.DisableFurniture();
-
+            StartCoroutine(touchHandler.SetSelectMode());
             GameObject[] furnitureWorld = GameObject.FindGameObjectsWithTag("Furniture");
             if (furnitureWorld.Length > 0)
             {

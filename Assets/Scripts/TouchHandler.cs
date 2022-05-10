@@ -42,27 +42,40 @@ public class TouchHandler : MonoBehaviour
 
     public enum Mode
     {
-        ReadyMode,
+        WaitMode,
         SelectMode,
         EditMode
     }
     void Start()
     {
-        touchMode = Mode.SelectMode;
+        touchMode = Mode.WaitMode;
         target = null;
         UItouched = false;
 
         floorLayer = 1 << LayerMask.NameToLayer("Floor");
     }
-    public void SetTouchMode(Mode i)
+    public IEnumerator SetWaitMode()
     {
-        touchMode = i;
+        touchMode = Mode.WaitMode;
+        yield return null;
+    }
+    public IEnumerator SetSelectMode()
+    {
+        yield return new WaitForSeconds(0.1f);
+        touchMode = Mode.SelectMode;
+    }
+    public IEnumerator SetEdithMode()
+    {
+        yield return new WaitForSeconds(0.1f);
+        touchMode = Mode.EditMode;
     }
     // Update is called once per frame
     void Update()
     {
         switch(touchMode)
         {
+            case Mode.WaitMode:
+                break;
             case Mode.SelectMode:
                 if (Input.touchCount == 1) {
                     Touch touch = Input.GetTouch(0);
