@@ -14,13 +14,13 @@ public class UI_FurnitureTypeItem : MonoBehaviour
 
     //[SerializeField] UI_FurnitureTypeSelectUI furnitureTypeSelectUI;
 
-
     FurnitureType furnitureType;
 
     public void SetItem(FurnitureType type)
     {
         furnitureType = type;
-        //furnitureImage.sprite = furnitureInfo.furnitureImage;
+        Debug.Log("CategoryImg/"+type.ToString()+"CategoryImg.png");
+        furnitureTypeImage.sprite = Resources.Load("CategoryImg/"+type.ToString()+"CategoryImg", typeof(Sprite)) as Sprite;
         furnitureTypeText.SetText(type.ToString());
     }
 
