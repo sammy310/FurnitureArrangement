@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UI_SizeMeasureUI : MonoBehaviour
@@ -13,6 +14,9 @@ public class UI_SizeMeasureUI : MonoBehaviour
     [SerializeField] TMP_InputField heightInputField;
     [SerializeField] TMP_InputField depthInputField;
 
+    [SerializeField] Button createButton;
+    RectTransform createButtonRect = null;
+
     public const int MinSize = 10;
     public const int MaxSize = 10000;
 
@@ -22,8 +26,10 @@ public class UI_SizeMeasureUI : MonoBehaviour
         widthInputField.onEndEdit.AddListener(WidthInputFieldCorrect);
         heightInputField.onEndEdit.AddListener(HeightInputFieldCorrect);
         depthInputField.onEndEdit.AddListener(DepthInputFieldCorrect);
+
+        createButtonRect = createButton.GetComponent<RectTransform>();
     }
-    
+
     public void EnableUI()
     {
         if (sizeCubeManager.IsSizeCubeActive)
@@ -104,5 +110,14 @@ public class UI_SizeMeasureUI : MonoBehaviour
     {
         int depth = GetInputFieldCorrect(inputValue);
         depthInputField.text = depth.ToString();
+    }
+
+
+    public void UpdateCreateButton(bool activate)
+    {
+        if (activate)
+            createButtonRect.localRotation = Quaternion.Euler(0, 0, 45);
+        else
+            createButtonRect.localRotation = Quaternion.identity;
     }
 }

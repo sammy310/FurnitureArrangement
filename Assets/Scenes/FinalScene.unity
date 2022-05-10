@@ -7925,6 +7925,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b789a62ba382f489ca5ab46a9deaa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SizeCubeActivateEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8455893568863418839}
+        m_TargetAssemblyTypeName: UI_SizeMeasureUI, Assembly-CSharp
+        m_MethodName: UpdateCreateButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2078402090385810423 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4214477680186279969, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
@@ -8258,6 +8273,7 @@ MonoBehaviour:
   widthInputField: {fileID: 473405009634433290}
   heightInputField: {fileID: 473405010422455282}
   depthInputField: {fileID: 473405009463252059}
+  createButton: {fileID: 473405010604309908}
 --- !u!114 &9016740939412645682 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6596300873521515748, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}

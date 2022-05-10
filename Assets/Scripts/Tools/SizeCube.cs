@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class SizeCube : MonoBehaviour
 {
@@ -21,8 +22,10 @@ public class SizeCube : MonoBehaviour
     TextMeshPro heightText;
     TextMeshPro depthText;
 
-    Coroutine textFacingCoroutine = null;
+    const float MinTextResizeSize = 0.5f;
 
+    Coroutine textFacingCoroutine = null;
+    
     public bool IsActive => gameObject.activeSelf;
 
     private void Awake()
@@ -32,6 +35,11 @@ public class SizeCube : MonoBehaviour
         widthText = widthTextTransform.GetComponentInChildren<TextMeshPro>();
         heightText = heightTextTransform.GetComponentInChildren<TextMeshPro>();
         depthText = depthTextTransform.GetComponentInChildren<TextMeshPro>();
+    }
+
+    private void OnDestroy()
+    {
+        sizeCubeManager.SizeCubeActivateEvent.Invoke(false);
     }
 
     public void SetSizeCubeManager(SizeCubeManager sizeCubeManager)
@@ -63,7 +71,17 @@ public class SizeCube : MonoBehaviour
         widthTextTransform.localPosition = new Vector3(0, -height / 2, -depth / 2);
         heightTextTransform.localPosition = new Vector3(-width / 2, 0, -depth / 2);
         depthTextTransform.localPosition = new Vector3(width / 2, -height / 2, 0);
-        
+
+        float maxSize = Mathf.Max(width, height, depth);
+        if (maxSize < MinTextResizeSize)
+        {
+            float resize = Mathf.Lerp(0.3f, 1.0f, maxSize / MinTextResizeSize);
+            Vector3 newScale = new Vector3(resize, resize, resize);
+            widthTextTransform.localScale = newScale;
+            heightTextTransform.localScale = newScale;
+            depthTextTransform.localScale = newScale;
+        }
+
         widthText.SetText(GetMilimeterStringFromMeter(width));
         heightText.SetText(GetMilimeterStringFromMeter(height));
         depthText.SetText(GetMilimeterStringFromMeter(depth));
@@ -74,6 +92,8 @@ public class SizeCube : MonoBehaviour
             textFacingCoroutine = null;
         }
         textFacingCoroutine = StartCoroutine(TextFacingToCamera());
+
+        sizeCubeManager.SizeCubeActivateEvent.Invoke(true);
     }
 
     public void SetSizeCube(Transform anchor, Vector3 position, Vector3 size)
@@ -107,6 +127,8 @@ public class SizeCube : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+        
+        sizeCubeManager.SizeCubeActivateEvent.Invoke(false);
     }
 
     public static float MeterToMilimeter(float meter)

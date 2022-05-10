@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SizeCubeManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class SizeCubeManager : MonoBehaviour
 
     public Transform SizeCubeAnchor { get; private set; } = null;
     SizeCube sizeCube = null;
+    
+    public UnityEvent<bool> SizeCubeActivateEvent = new UnityEvent<bool>();
+
     public bool IsSizeCubeActive => sizeCube != null && sizeCube.IsActive;
 
     private void Awake()
@@ -46,6 +50,8 @@ public class SizeCubeManager : MonoBehaviour
         Debug.Log("pos: " + position.ToString() + "\nrot: " + rotation.ToString());
 
         sizeCube.SetSizeCube(position, rotation, width, height, depth);
+
+        sizeCube.tag = "Furniture";
     }
 
     public void CreateSizeCube(float width, float height, float depth)
@@ -75,6 +81,8 @@ public class SizeCubeManager : MonoBehaviour
         if (furniture.SizeMeasure == null) return false;
 
         sizeCube.SetSizeCube(furniture.ObjectTransform, furniture.SizeMeasure.GetCenter(), furniture.SizeMeasure.GetSize());
+
+        sizeCube.tag = "Untagged";
 
         return true;
     }
