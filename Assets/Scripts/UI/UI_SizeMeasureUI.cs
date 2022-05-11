@@ -45,7 +45,7 @@ public class UI_SizeMeasureUI : MonoBehaviour
             return;
         }
 
-        sizeMeasureUIPanel.SetActive(true);
+        //sizeMeasureUIPanel.SetActive(true);
     }
 
     public void DisableUI()
@@ -112,6 +112,11 @@ public class UI_SizeMeasureUI : MonoBehaviour
         depthInputField.text = depth.ToString();
     }
 
+
+    public void SetActiveCreateButton(bool value)
+    {
+        createButton.gameObject.SetActive(value);
+    }
 
     public void UpdateCreateButton(bool activate)
     {

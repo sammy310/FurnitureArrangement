@@ -2000,6 +2000,7 @@ MonoBehaviour:
   floorPrefab: {fileID: 5389671154871872512, guid: e0d02421e1f34014a9000767f47b478b, type: 3}
   mainUI: {fileID: 1075170299}
   furnitureName: {fileID: 728761171}
+  sizeMeasureUI: {fileID: 8455893568863418839}
 --- !u!114 &869482719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6551,7 +6552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &473405010750457640
 RectTransform:
   m_ObjectHideFlags: 0

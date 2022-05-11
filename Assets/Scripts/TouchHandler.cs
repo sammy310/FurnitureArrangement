@@ -28,6 +28,8 @@ public class TouchHandler : MonoBehaviour
     public GameObject mainUI;
     public TextMeshProUGUI furnitureName;
 
+    [SerializeField] UI_SizeMeasureUI sizeMeasureUI;
+
     GameObject floorClone;
     Collider[] collider1;
     Collider[] collider2;
@@ -212,6 +214,8 @@ public class TouchHandler : MonoBehaviour
                 bookmarkButton.SetActive(true);
                 furnitureText.SetActive(true);
 
+                sizeMeasureUI.SetActiveCreateButton(true);
+
                 if (targetMesh != null)
                     FurnitureManager.Instance.SetFurniture(targetMesh.Controller as Furniture);
             }
@@ -317,6 +321,8 @@ public class TouchHandler : MonoBehaviour
         bookmarkButton.SetActive(false);
         furnitureText.SetActive(false);
         editEndButton.SetActive(false);
+
+        sizeMeasureUI.SetActiveCreateButton(false);
 
         FurnitureManager.Instance.DisableFurniture();
     }
