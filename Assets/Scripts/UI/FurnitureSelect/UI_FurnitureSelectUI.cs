@@ -96,7 +96,6 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     public void ShowAllFurniture()
     {
         EnableUI(true);
-        
         foreach (UI_FurnitureSelectItem item in selectItemDict.Values)
         {
             item.ShowItem();
@@ -107,6 +106,7 @@ public class UI_FurnitureSelectUI : MonoBehaviour
     public void ShowBookmarkedFurniture()
     {
         EnableUI(true);
+        //AnimManager.instance.StartBookAnim();
         pageName.SetText("Your wishlist");
         foreach (UI_FurnitureSelectItem item in selectItemDict.Values)
         {

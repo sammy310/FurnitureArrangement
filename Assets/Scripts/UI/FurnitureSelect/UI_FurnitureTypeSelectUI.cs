@@ -48,7 +48,8 @@ public class UI_FurnitureTypeSelectUI : MonoBehaviour
     public void ShowAllType()
     {
         EnableUI(true);
-        foreach(UI_FurnitureTypeItem typeItem in typeItemList)
+        //AnimManager.instance.StartListAnim();
+        foreach (UI_FurnitureTypeItem typeItem in typeItemList)
         {
             typeItem.ShowItem();
         }

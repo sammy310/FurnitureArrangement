@@ -9,6 +9,7 @@ public class ScreenShot : MonoBehaviour
     //public GameObject blink;             // 사진 찍을 때 깜빡일 것
     //public GameObject shareButtons;      // 공유 버튼
     public GameObject UIobject;
+    public GameObject flashObect;
     bool isCoroutinePlaying;             // 코루틴 중복방지
 
     // 파일 불러올 때 필요
@@ -30,7 +31,8 @@ public class ScreenShot : MonoBehaviour
     IEnumerator captureScreenshot()
     {
         isCoroutinePlaying = true;
-
+        flashObect.SetActive(true);
+        AnimManager.instance.StartFlash();
         // UI 없앤다...
         UIobject.SetActive(false);
         yield return new WaitForEndOfFrame();
@@ -39,7 +41,6 @@ public class ScreenShot : MonoBehaviour
         ScreenshotAndGallery();
 
         yield return new WaitForEndOfFrame();
-
         // 블링크
         //BlinkUI();
 
@@ -50,10 +51,9 @@ public class ScreenShot : MonoBehaviour
         // UI 다시 나온다...
 
         yield return new WaitForSecondsRealtime(0.3f);
-
+        flashObect.SetActive(false);
         // 찍은 사진이 등장
         //GetPirctureAndShowIt();
-
         isCoroutinePlaying = false;
     }
 
