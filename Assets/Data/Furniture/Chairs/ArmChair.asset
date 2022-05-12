@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It is an armchair finished with luxurious leather. The backrest is
     inclined at an appropriate slope according to the human body structure.
   furnitureObject: {fileID: 1000013432996786, guid: 5fe24ea21c997ef4ebbcfd0e53a10505, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 5c2da26db9b62f24b82f5986d06794de, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 5c9dd914573f43047abbeec20492346a, type: 3}
   furnitureWidth: 50
   furnitureHeight: 50
   furnitureDepth: 60

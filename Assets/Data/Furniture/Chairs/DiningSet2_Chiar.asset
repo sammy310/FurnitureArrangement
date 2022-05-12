@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a luxurious beige leather chair. It has a moderate weight and
     is hard.
   furnitureObject: {fileID: 1000013639321410, guid: 2af5b6c51f37942429f8e0f9075c2a39, type: 3}
-  furnitureImage: {fileID: 21300000, guid: e2759fa36c517824596231bb1a6b2393, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 0557e117d0cae9e40816f632fc5b6738, type: 3}
   furnitureWidth: 50
   furnitureHeight: 90
   furnitureDepth: 72

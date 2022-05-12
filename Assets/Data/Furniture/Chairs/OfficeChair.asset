@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a swivel office chair. The backrest angle can be adjusted, and
     there is an ergonomically designed armrest. It's fluffy.
   furnitureObject: {fileID: 1000014266841850, guid: d8130bf91d52e6f41927e91847f5fac4, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 646c547cf131a5a46a75b4186e53c60f, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 0c2470f1e3601c042b5b310ae2a1785a, type: 3}
   furnitureWidth: 40
   furnitureHeight: 100
   furnitureDepth: 78
