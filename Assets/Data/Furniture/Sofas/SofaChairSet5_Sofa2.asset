@@ -17,7 +17,7 @@ MonoBehaviour:
     is good for watching movies as if lying down because the chair is wide and the
     back is inclined.
   furnitureObject: {fileID: 1000013283612614, guid: 3074ead0891059b4bafc5d6985b0917f, type: 3}
-  furnitureImage: {fileID: 21300000, guid: ada021890b1ba8d4399bab83226173e5, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 38a59023d8803bc4fa904cfd0821efd2, type: 3}
   furnitureWidth: 150
   furnitureHeight: 75
   furnitureDepth: 78

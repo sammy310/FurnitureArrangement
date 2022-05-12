@@ -16,7 +16,7 @@ MonoBehaviour:
   description: You can do back muscle exercises through pull-ups. The price includes
     a band.
   furnitureObject: {fileID: 1000011411931536, guid: 65e4ed600c50fa242804884bf176f289, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 16cf7ecb9efd6704683aa0555e40f752, type: 3}
+  furnitureImage: {fileID: 21300000, guid: f86ca625fc7eea0428eed4ac62db838b, type: 3}
   furnitureWidth: 75
   furnitureHeight: 200
   furnitureDepth: 65

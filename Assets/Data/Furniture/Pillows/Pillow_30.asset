@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a fluffy and soft cushion. Covers of various colors can be customized,
     and phrases can also be engraved.
   furnitureObject: {fileID: 1000010667816430, guid: 8f9e2f9b5c446084b9ed853644bdaa61, type: 3}
-  furnitureImage: {fileID: 21300000, guid: c9faed196f47ea6489758b343aa45cb6, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 7ecce901956f0a749956cd613b52b2ed, type: 3}
   furnitureWidth: 35
   furnitureHeight: 35
   furnitureDepth: 20

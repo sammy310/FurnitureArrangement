@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It is a white leather sofa for one person. A little beige color is
     mixed to reduce concerns about fading. It is made of a soft and hard material.
   furnitureObject: {fileID: 1000010695444930, guid: 62b71c75cd7412c409462f73e1250bc7, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 4aa5eed75c12ccf43b4a5ae9f6b4a8f4, type: 3}
+  furnitureImage: {fileID: 21300000, guid: ead9e566c4ee6cf42a07b71d3494e706, type: 3}
   furnitureWidth: 68
   furnitureHeight: 80
   furnitureDepth: 60

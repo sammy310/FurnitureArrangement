@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It is a square striped cushion. It is moderately hard and easy to
     use for design purposes.
   furnitureObject: {fileID: 1000012158640402, guid: fcd71a008d0230944815b551b7852a78, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 9b1e53c0243b4a74791f5b7203483a87, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 6aefbc08e3bd0a142a7ad41467c3099d, type: 3}
   furnitureWidth: 20
   furnitureHeight: 20
   furnitureDepth: 15

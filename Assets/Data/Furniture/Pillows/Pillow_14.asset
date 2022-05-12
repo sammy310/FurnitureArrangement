@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a sleeping pillow. It's soft and cotton, so it's good for people
     with sensitive skin to use.
   furnitureObject: {fileID: 1000010445495750, guid: 10875e3d127a28d4eac638a56cdc2b04, type: 3}
-  furnitureImage: {fileID: 21300000, guid: ae91acfe02fe210499fcb5f13972c10a, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 16dd1df9700f5ca4bad70a5da2d07352, type: 3}
   furnitureWidth: 70
   furnitureHeight: 30
   furnitureDepth: 17

@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a good mood light to turn on at the bedside before going to bed.
     It is a light with a soft color.
   furnitureObject: {fileID: 1000011967555466, guid: 2448c8af647d4e242992a5995186822f, type: 3}
-  furnitureImage: {fileID: 21300000, guid: e21946cee67fa7841ad08be7e48b2ac2, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 167c1d6819e2ddb49b35576178646656, type: 3}
   furnitureWidth: 15
   furnitureHeight: 23
   furnitureDepth: 15

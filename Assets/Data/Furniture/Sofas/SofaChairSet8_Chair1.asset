@@ -16,7 +16,7 @@ MonoBehaviour:
   description: a sofa with no armrests and backrests. It is also good to buy it with
     a sofa and use it more widely.
   furnitureObject: {fileID: 1000011090733286, guid: c935dbf877013d34c835e3f130205486, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 8796f81386f592e4ead8c96758be4f7f, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 6470457a10ccf4746b93653170c7cbc0, type: 3}
   furnitureWidth: 60
   furnitureHeight: 35
   furnitureDepth: 60

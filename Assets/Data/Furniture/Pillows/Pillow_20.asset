@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a leather pillow with nice stripes. It is made of vegan leather,
     and it is moderately hard, so it does not strain the neck.
   furnitureObject: {fileID: 1000010873436296, guid: 05206b678a321d14ebe95a0f2105c6d0, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 69d9a8b6b1e47014aa136fdbe45b53e2, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 10c9bebb3976cf34aa427969fc9d6e8b, type: 3}
   furnitureWidth: 70
   furnitureHeight: 27
   furnitureDepth: 14

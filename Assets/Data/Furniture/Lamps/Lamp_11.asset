@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It is a lamp with a design that won the 2021 New Designer Competition.
     Brightness can be adjusted.
   furnitureObject: {fileID: 1000010077216158, guid: dfa4fc34ebbd70d4e8d783ad52124d88, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 7693a55bc875e734e841cce2c05e6018, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 0025db282879e514eaf414ea3a4ffec7, type: 3}
   furnitureWidth: 10
   furnitureHeight: 30
   furnitureDepth: 14

@@ -15,7 +15,7 @@ MonoBehaviour:
   furnitureName: Wood Dining Chair
   description: It is a simple yet neat dining chair. It's strong.
   furnitureObject: {fileID: 1000010430532536, guid: b3a724e4c9129f747aad6f2cda8e89f0, type: 3}
-  furnitureImage: {fileID: 21300000, guid: a582b59b6d8856c4186b7cf1a074175b, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 0011af12d6b555248811edb5923b7748, type: 3}
   furnitureWidth: 50
   furnitureHeight: 90
   furnitureDepth: 72

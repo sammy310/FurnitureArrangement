@@ -16,7 +16,7 @@ MonoBehaviour:
   description: You can cycle indoors. Speed, calorie consumption, and operating time
     can be checked through the display attached to the front.
   furnitureObject: {fileID: 1000011274226080, guid: b6b77de3ebcad004ca58165d6d787454, type: 3}
-  furnitureImage: {fileID: 21300000, guid: 050b26c6b72b7d644b3bff6f7d4f82ba, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 40baac0456d41c246bb33e02e53c352d, type: 3}
   furnitureWidth: 70
   furnitureHeight: 150
   furnitureDepth: 100

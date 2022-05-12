@@ -16,7 +16,7 @@ MonoBehaviour:
   description: A good plastic chair to use in schools or academies.Cost-efficient
     and more luxurious.
   furnitureObject: {fileID: 1000011388997758, guid: 279b3816b5552d340a2d3318653e15ec, type: 3}
-  furnitureImage: {fileID: 21300000, guid: b4ace356f537b3f48abf39b50d1812d6, type: 3}
+  furnitureImage: {fileID: 21300000, guid: 5279526a51a51a64b8347f42ac598ed0, type: 3}
   furnitureWidth: 40
   furnitureHeight: 60
   furnitureDepth: 57

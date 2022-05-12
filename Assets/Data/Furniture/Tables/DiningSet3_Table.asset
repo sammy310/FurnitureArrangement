@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It's a luxurious wooden desk. It can be used for a long time with
     a clean finish, and the legs are made of iron, so it is hard.
   furnitureObject: {fileID: 1000011526524994, guid: 349553eb53108554ca03c037aebcd452, type: 3}
-  furnitureImage: {fileID: 21300000, guid: b9bdb3de25ab0c44ba3f6cb35a594944, type: 3}
+  furnitureImage: {fileID: 21300000, guid: af87fc3ff35516542a51b8c57104e2a1, type: 3}
   furnitureWidth: 98
   furnitureHeight: 67
   furnitureDepth: 52
