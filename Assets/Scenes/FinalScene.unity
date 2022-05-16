@@ -2466,8 +2466,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6c386be0276ee4172aa069cfbe64e050, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8277,8 +8277,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6596300873490535943, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596300873490535943, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596300873490535943, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 626
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596300873490535943, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 313
       objectReference: {fileID: 0}
     - target: {fileID: 6596300873521515748, guid: 6bc84b3adb22d4f5893fe115cf143637, type: 3}
       propertyPath: furnitureTypeSelectUI
